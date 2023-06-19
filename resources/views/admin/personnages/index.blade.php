@@ -3,8 +3,10 @@
 
 @section("content")
 
+<!-- Tableau d'affichage des personnages Red Dead Redemption 2  -->
+
 <div class="my-3 p-3 bg-body rounded shadow-sm">
-    <h3 class="border-bottom pb-2 mb-4">Liste de nos villes</h3>
+    <h3 class="border-bottom pb-2 mb-4">Les personnages Red Dead Redemption 2</h3>
 
     <div class="d-flex justify-content-end mb-4">
         <a href="{{route('personnages-admin.create')}}" class="btn btn-primary">Créer un nouveau personnage</a>
@@ -27,9 +29,9 @@
             <tr>
                 <td>{{$personnage->id}}</td>
                 <td>{{$personnage->prenom}} {{$personnage->nom}} </td>
-                <td style="width: 20%"><img src="{{asset('/storage/images/personnages/'.$personnage->image)}}" style="width: 70%"/></td>
+                <td style="width: 20%"><img src="{{asset('/storage/images/personnages/'.$personnage->image)}}" style="width: 60%"/></td>
                 <td>{{$personnage->age}}</td>
-                <td>{{ substr($personnage->biographie, 0, 60) }}[...]</td>
+                <td>{{ substr($personnage->biographie, 0, 50) }}[...]</td>
                 <td>{{$personnage->gang->nom}}</td>
                 <td class="d-flex justify-content-between">
                     <form action="{{route('personnages-admin.destroy', $personnage->id) }}" method="post">

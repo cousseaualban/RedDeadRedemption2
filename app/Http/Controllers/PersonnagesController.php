@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Personnages;
-use App\Http\Requests\UpdatePersonnagesRequest;
 use App\Models\Gangs;
 use Illuminate\Http\Request;
+
 
 class PersonnagesController extends Controller
 {
@@ -65,45 +65,74 @@ class PersonnagesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Personnages  $personnages
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Personnages $personnages)
+    public function show($id)
     {
-        //
+        $personnage = Personnages::find($id);
+
+        return view('admin.personnages.show', compact('personnage',));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Personnages  $personnages
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Personnages $personnages)
+    public function edit($id)
     {
-        //
+        $gangs = Gangs::all();
+        $personnage = Personnages::find($id);
+
+        return view('admin.personnages.edit', compact('personnage', 'gangs'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdatePersonnagesRequest  $request
-     * @param  \App\Models\Personnages  $personnages
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdatePersonnagesRequest $request, Personnages $personnages)
+    public function update(Request $request, $id)
     {
-        //
+        $personnage = Personnages::find($id);
+        $personnage->prenom = $request->get('prenom');
+        $personnage->nom = $request->get('nom');
+        $personnage->age = $request->get('age');
+        $personnage->biographie = $request->get('biographie');
+        $personnage->gang_id = $request->get('gang_id');
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $nom_image = $image->getClientOriginalName();
+            $destination = public_path('storage/images/personnages');
+            $image->move($destination, $nom_image);
+            $personnage->image = $nom_image;
+        }
+
+        $personnage->save();
+
+        return redirect('/personnages-admin')->with('success', 'Personnage modifié avec succès');
     }
+
+
+
+
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Personnages  $personnages
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Personnages $personnages)
+    public function destroy($id)
     {
-        //
+        $personnage = Personnages::find($id);
+        $personnage->delete();
+
+        return redirect('/personnages-admin')->with('success', 'Personnage supprimé avec succès');
     }
 }

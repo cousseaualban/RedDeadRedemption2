@@ -31,8 +31,8 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('/gangs-admin', GangsController::class);
     Route::resource('/personnages-admin', PersonnagesController::class);
     Route::resource('/regions-admin', RegionsController::class);
+    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 });
 
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

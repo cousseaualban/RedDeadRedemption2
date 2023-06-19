@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Gangs;
-use App\Http\Requests\StoreGangsRequest;
-use App\Http\Requests\UpdateGangsRequest;
+use Illuminate\Http\Request;
+
 
 class GangsController extends Controller
 {
@@ -15,7 +15,8 @@ class GangsController extends Controller
      */
     public function index()
     {
-        //
+        $gangs = Gangs::all();
+        return view('admin.gangs.index', compact('gangs'));
     }
 
     /**
@@ -25,62 +26,101 @@ class GangsController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.gangs.create');
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreGangsRequest  $request
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreGangsRequest $request)
+    public function store(Request $request)
     {
-        //
+        $envoiBDD = $request->validate([
+            'nom' => 'required|max:50',
+            'historique' => 'required|max:500',
+            'localisation' => 'required|max:100',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $chemin_destination = 'public/images/gangs';
+            $image = $request->file('image');
+            $nom_image = $image->getClientOriginalName();
+            $chemin = $request->file('image')->storeAs($chemin_destination, $nom_image);
+
+            $envoiBDD['image'] = $nom_image;
+        }
+
+        Gangs::create($envoiBDD);
+
+        return redirect('/gangs-admin')->with('success', 'Bande ajoutée avec succès');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Gangs  $gangs
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Gangs $gangs)
+    public function show($id)
     {
-        //
+        $gang = Gangs::find($id);
+
+        return view('admin.gangs.show', compact('gang',));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Gangs  $gangs
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Gangs $gangs)
+    public function edit($id)
     {
-        //
+        $gang = Gangs::find($id);
+
+        return view('admin.gangs.edit', compact('gang'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateGangsRequest  $request
-     * @param  \App\Models\Gangs  $gangs
+     * @param  \Illuminate\Http\Request  $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateGangsRequest $request, Gangs $gangs)
+    public function update(Request $request, $id)
     {
-        //
+        $gang = Gangs::find($id);
+        $gang->nom = $request->get('nom');
+        $gang->historique = $request->get('historique');
+        $gang->localisation = $request->get('localisation');
+
+        if ($request->hasFile('image')) {
+            $image = $request->file('image');
+            $nom_image = $image->getClientOriginalName();
+            $destination = public_path('storage/images/gangs');
+            $image->move($destination, $nom_image);
+            $gang->image = $nom_image;
+        }
+
+        $gang->save();
+
+        return redirect('/gangs-admin')->with('success', 'Bande modifiée avec succès');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Gangs  $gangs
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Gangs $gangs)
+    public function destroy($id)
     {
-        //
+        $gang = Gangs::find($id);
+        $gang->delete();
+
+        return redirect('/gangs-admin')->with('success', 'Bande supprimée avec succès');
     }
 }

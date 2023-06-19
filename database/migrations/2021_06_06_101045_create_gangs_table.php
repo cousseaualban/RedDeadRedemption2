@@ -14,8 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('gangs', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->string('nom');
+            $table->string('image')->nullable();
+            $table->longText('historique');
             $table->string('localisation');
             $table->timestamps();
         });
