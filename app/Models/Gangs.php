@@ -14,6 +14,7 @@ class Gangs extends Model
     protected $fillable = [
         'id',
         'nom',
+        'image',
         'historique',
         'localisation',
     ];

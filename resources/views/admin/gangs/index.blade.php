@@ -27,7 +27,7 @@
             @foreach($gangs as $gang)
             <tr>
                 <td>{{$gang->id}}</td>
-                <td style="width: 30%"><img src="{{asset('/storage/images/gangs/'.$gang->image)}}" style="width: 60%"/></td>
+                <td style="width: 20%"><img src="{{asset('/storage/images/gangs/'.$gang->image)}}" style="width: 60%"/></td>
                 <td>{{$gang->nom}}</td>
                 <td>{{ substr($gang->historique, 0, 50) }}[...]</td>
                 <td>{{$gang->localisation}}</td>

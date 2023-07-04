@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Villes;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class VillesSeeder extends Seeder
@@ -15,11 +14,10 @@ class VillesSeeder extends Seeder
      */
     public function run()
     {
-        if (Villes::find(1) === null) {
+        $villes = ['Valentine', 'Strawberry', 'Rhodes', 'Saint-Denis', 'Annesburg', 'Grizzlies'];
+        foreach($villes as $ville){
             Villes::firstOrCreate([
-                'id' => 1,
-                'nom' => 'Valentine',
-                'region_id' => 1,
+                'capitale' => $ville,
             ]);
         }
     }

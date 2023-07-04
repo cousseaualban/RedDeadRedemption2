@@ -15,6 +15,7 @@ class GangsController extends Controller
      */
     public function index()
     {
+        /* Récupérer dans la table gangs l'ensemble des données */ 
         $gangs = Gangs::all();
         return view('admin.gangs.index', compact('gangs'));
     }
@@ -26,6 +27,7 @@ class GangsController extends Controller
      */
     public function create()
     {
+        /* Renvoie la vue create contenant le formulaire de création */
         return view('admin.gangs.create');
     }
 
@@ -37,12 +39,14 @@ class GangsController extends Controller
      */
     public function store(Request $request)
     {
+        /* Méthode d'envoi des données saisies dans le formulaire de création vers la base de données */
         $envoiBDD = $request->validate([
             'nom' => 'required|max:50',
             'historique' => 'required|max:500',
             'localisation' => 'required|max:100',
         ]);
 
+        /* Conditions permettant de stocker mes images dans le dossier public/images/gangs lors de la création d'un gang */
         if ($request->hasFile('image')) {
             $chemin_destination = 'public/images/gangs';
             $image = $request->file('image');
@@ -50,8 +54,8 @@ class GangsController extends Controller
             $chemin = $request->file('image')->storeAs($chemin_destination, $nom_image);
 
             $envoiBDD['image'] = $nom_image;
+            
         }
-
         Gangs::create($envoiBDD);
 
         return redirect('/gangs-admin')->with('success', 'Bande ajoutée avec succès');
@@ -65,9 +69,10 @@ class GangsController extends Controller
      */
     public function show($id)
     {
+        /* Renvoie la vue d'affichage d'un gang en fonction de l'ID du gang */
         $gang = Gangs::find($id);
 
-        return view('admin.gangs.show', compact('gang',));
+        return view('admin.gangs.show', compact('gang'));
     }
 
     /**
@@ -78,6 +83,7 @@ class GangsController extends Controller
      */
     public function edit($id)
     {
+        /* Récupère l'ID d'un gang et renvoie l'utilisateur vers la vue de modification d'un gang */
         $gang = Gangs::find($id);
 
         return view('admin.gangs.edit', compact('gang'));
@@ -92,11 +98,13 @@ class GangsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        /* Méthode permettant de récupérer les données du gang et d'enregistrer la ou les modifications apportées */
         $gang = Gangs::find($id);
         $gang->nom = $request->get('nom');
         $gang->historique = $request->get('historique');
         $gang->localisation = $request->get('localisation');
 
+        /* Conditions permettant de remplacer l'image initialement choisie par une nouvelle */
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $nom_image = $image->getClientOriginalName();
@@ -118,6 +126,7 @@ class GangsController extends Controller
      */
     public function destroy($id)
     {
+        /* Supprime le gang sélectionné */ 
         $gang = Gangs::find($id);
         $gang->delete();
 

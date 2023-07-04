@@ -16,6 +16,8 @@ class PersonnagesController extends Controller
      */
     public function index()
     {
+        /* Récupérer dans la table personnages l'ensemble des données */
+
         $personnages = Personnages::all();
 
         return view('admin.personnages.index', compact('personnages'));
@@ -28,6 +30,9 @@ class PersonnagesController extends Controller
      */
     public function create()
     {
+        /* Renvoie la vue create contenant le formulaire de création */
+        /* On récupère également l'ensemble des gangs car on a un personnage est affecté à un gang */
+
         $gangs = Gangs::all();
         return view('admin.personnages.create', compact('gangs'));
     }
@@ -40,6 +45,8 @@ class PersonnagesController extends Controller
      */
     public function store(Request $request)
     {
+        /* Méthode d'envoi des données saisies dans le formulaire de création vers la base de données */
+
         $envoiBDD = $request->validate([
             'prenom' => 'required|max:50',
             'nom' => 'required|max:50',
@@ -48,6 +55,7 @@ class PersonnagesController extends Controller
             'gang_id' => 'required|integer',
         ]);
 
+        /* Conditions permettant de stocker mes images dans le dossier public/images/personnages lors de la création d'un personnage */
         if ($request->hasFile('image')) {
             $chemin_destination = 'public/images/personnages';
             $image = $request->file('image');
@@ -70,6 +78,7 @@ class PersonnagesController extends Controller
      */
     public function show($id)
     {
+        /* Renvoie la vue d'affichage d'un personnage en fonction de l'ID du personnage */
         $personnage = Personnages::find($id);
 
         return view('admin.personnages.show', compact('personnage',));
@@ -83,6 +92,8 @@ class PersonnagesController extends Controller
      */
     public function edit($id)
     {
+        /* Récupère l'ID d'un personnage et renvoie l'utilisateur vers la vue de modification d'un personnage */
+
         $gangs = Gangs::all();
         $personnage = Personnages::find($id);
 
@@ -98,6 +109,8 @@ class PersonnagesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        /* Méthode permettant de récupérer les données du personnage et d'enregistrer la ou les modifications apportées */
+
         $personnage = Personnages::find($id);
         $personnage->prenom = $request->get('prenom');
         $personnage->nom = $request->get('nom');
@@ -105,6 +118,7 @@ class PersonnagesController extends Controller
         $personnage->biographie = $request->get('biographie');
         $personnage->gang_id = $request->get('gang_id');
 
+        /* Conditions permettant de remplacer l'image initialement choisie par une nouvelle */
         if ($request->hasFile('image')) {
             $image = $request->file('image');
             $nom_image = $image->getClientOriginalName();
@@ -118,10 +132,6 @@ class PersonnagesController extends Controller
         return redirect('/personnages-admin')->with('success', 'Personnage modifié avec succès');
     }
 
-
-
-
-
     /**
      * Remove the specified resource from storage.
      *
@@ -130,6 +140,7 @@ class PersonnagesController extends Controller
      */
     public function destroy($id)
     {
+        /* Supprime le personnage sélectionné */ 
         $personnage = Personnages::find($id);
         $personnage->delete();
 

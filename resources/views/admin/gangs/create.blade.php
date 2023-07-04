@@ -17,7 +17,7 @@
             </div>
 
             <div class="form-group">
-                <label for="image">Photo du personnage</label>
+                <label for="image">Photo de la bande</label>
                 <input type="file" class="form-control" name="image" />
             </div>
 
@@ -30,7 +30,7 @@
                 <label for="localisation"> Localisation de la bande : </label>
                 <input type="text" class="form-control" name="localisation" />
             </div>
-            
+
             <button type="submit" class="btn btn-primary">Ajouter</button>
         </form>
     </div>

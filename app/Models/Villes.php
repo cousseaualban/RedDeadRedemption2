@@ -13,11 +13,6 @@ class Villes extends Model
 
     protected $fillable = [
         'id',
-        'nom',
-        'region_id',
+        'capitale',
     ];
-
-    public function region(){
-        return $this->belongsTo(Regions::class);
-    }
 }

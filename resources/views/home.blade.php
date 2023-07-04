@@ -29,8 +29,29 @@
                     <h1><strong>Régions Red Dead Redemption 2</strong></h1>
                 </div>
                 <div class="card-body">
-                    <!-- Contenu de la carte -->
-                    <h2 class="card-title">Extrait d'une région</h2>
+                    @if($region)
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <td>ID</td>
+                                <td>Nom de la région</td>
+                                <td>Photo</td>
+                                <td>Capitale de la région</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td>{{$region->id}}</td>
+                                <td>{{$region->nom}}</td>
+                                <td><img height="100vh" src="{{asset('/storage/images/regions/'.$region->image)}}" /></td>
+                                <td>{{$region->ville->capitale}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    @else
+                    <p>Aucune région n'a été trouvé.</p>
+                    @endif
                 </div>
                 <div class="card-footer">
                     <a href="/regions-admin" class="btn btn-dark">Voir toutes les régions</a>
@@ -45,10 +66,32 @@
                 <h1><strong>L'actualité Red Dead Redemption 2</strong></h1>
             </div>
             <div class="card-body">
-                <h2 class="card-title">Extrait d'un article concernant l'actualité RDR2</h2>
+                @if($article)
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>Titre de l'article</td>
+                            <td>Photo</td>
+                            <td>Auteur</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>{{$article->id}}</td>
+                            <td>{{$article->titre}}</td>
+                            <td><img height="100vh" src="{{asset('/storage/images/articles/'.$article->image)}}" /></td>
+                            <td>{{$article->auteur}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                @else
+                <p>Aucun article n'a été trouvé.</p>
+                @endif
             </div>
             <div class="card-footer">
-                <a href="/blog-admin" class="btn btn-dark">Accéder aux articles</a>
+                <a href="/articles-admin" class="btn btn-dark">Accéder aux articles</a>
             </div>
         </div>
         <div class="card text-center">
@@ -56,8 +99,29 @@
                 <h1><strong>Personnages Red Dead Redemption 2</strong></h1>
             </div>
             <div class="card-body">
-                <!-- Contenu de la carte -->
-                <h2 class="card-title">Extrait d'un personnage</h2>
+                @if($personnage)
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>Nom Prénom</td>
+                            <td>Photo</td>
+                            <td>Age</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>{{$personnage->id}}</td>
+                            <td>{{$personnage->nom}} {{$personnage->prenom}}</td>
+                            <td><img height="100vh" src="{{asset('/storage/images/personnages/'.$personnage->image)}}" /></td>
+                            <td>{{$personnage->age}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                @else
+                <p>Aucun personnage n'a été trouvé.</p>
+                @endif
             </div>
             <div class="card-footer">
                 <a href="/personnages-admin" class="btn btn-dark">Voir tous les personnages</a>
@@ -68,8 +132,29 @@
                 <h1><strong>Gangs Red Dead Redemption 2</strong></h1>
             </div>
             <div class="card-body">
-                <!-- Contenu de la carte -->
-                <h2 class="card-title">Extrait d'un gang</h2>
+                @if($gang)
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td>ID</td>
+                            <td>Nom de la bande</td>
+                            <td>Photo</td>
+                            <td>localisation</td>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>{{$gang->id}}</td>
+                            <td>{{$gang->nom}}</td>
+                            <td><img height="100vh" src="{{asset('/storage/images/gangs/'.$gang->image)}}" /></td>
+                            <td>{{$gang->localisation}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                @else
+                <p>Aucun personnage n'a été trouvé.</p>
+                @endif
             </div>
             <div class="card-footer">
                 <a href="/gangs-admin" class="btn btn-dark">Voir tous les gangs</a>

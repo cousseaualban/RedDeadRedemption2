@@ -314,7 +314,7 @@ return [
         ['header' => 'Gestion du blog'],
         [
             'text' => 'Blog',
-            'url'  => '/blog-admin',
+            'url'  => '/articles-admin',
             'icon' => 'fas fa-solid fa-newspaper',
         ],
         ['header' => 'Gestion RDR2'],

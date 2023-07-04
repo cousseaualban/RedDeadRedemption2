@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ArticlesController;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\GangsController;
 use App\Http\Controllers\PersonnagesController;
 use App\Http\Controllers\RegionsController;
@@ -27,11 +28,11 @@ Auth::routes();
 // Routes pour le BackOffice
 
 Route::middleware(['auth'])->group(function(){
-    Route::resource('/blog-admin', ArticlesController::class);
+    Route::resource('/articles-admin', ArticlesController::class);
     Route::resource('/gangs-admin', GangsController::class);
     Route::resource('/personnages-admin', PersonnagesController::class);
     Route::resource('/regions-admin', RegionsController::class);
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('/home', [Controller::class, 'getOne'])->name('home');
 });
 
 

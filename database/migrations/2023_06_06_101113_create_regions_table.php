@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('nom');
             $table->string('image')->nullable();
             $table->text('description');
+            $table->integer('ville_id')->unsigned();
+            $table->foreign('ville_id')->references('id')->on('villes');
             $table->timestamps();
         });
     }

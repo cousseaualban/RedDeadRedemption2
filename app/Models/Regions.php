@@ -15,6 +15,11 @@ class Regions extends Model
         'id',
         'nom',
         'image',
-        'description'
+        'description',
+        'ville_id',
     ];
+
+    public function ville(){
+        return $this->belongsTo(Villes::class);
+    }
 }
