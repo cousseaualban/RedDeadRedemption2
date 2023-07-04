@@ -104,7 +104,7 @@
                     <thead>
                         <tr>
                             <td>ID</td>
-                            <td>Nom Prénom</td>
+                            <td>Nom / Prénom</td>
                             <td>Photo</td>
                             <td>Age</td>
                         </tr>

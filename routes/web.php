@@ -35,5 +35,13 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/home', [Controller::class, 'getOne'])->name('home');
 });
 
+// Routes pour le FrontOffice
+
+
+// Obtenir la page d'accueil
+Route::get('/accueil', function(){
+    return view('front.accueil');
+});
+
 
 
