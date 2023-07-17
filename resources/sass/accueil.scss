@@ -137,54 +137,97 @@ body {
                 object-position: center;
             }
 
-            button{
+            button {
                 width: 95%;
                 margin-bottom: 5vh;
                 border-radius: 10px;
                 background-color: black;
 
-                a{
+                a {
                     text-decoration: none;
                     color: $texteHeaderFooter;
                 }
-    
-                a:hover{
+
+                a:hover {
                     color: $titre;
                 }
 
             }
 
-            button:hover{
+            button:hover {
                 background-color: #fff;
                 transition-duration: 0.6s;
             }
         }
     }
 
-    .footer{
+    .footer {
         background-color: $couleurDeFond;
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
         color: $texteHeaderFooter;
 
-        img{
-            width: 20%;
-        }
-
-        .coordonnees{
+        .nav {
+            padding-top: 4vh;
+            width: 90%;
+            margin: auto;
             display: flex;
-            flex-direction: column;
-            font-size: 1.5em;
+            justify-content: space-between;
+            align-items: center;
 
-            .uneCoordonnee{
+            img {
+                width: 20%;
+            }
+
+            .coordonnees {
                 display: flex;
-                align-items: center;
+                flex-direction: column;
+                font-size: 1.5em;
 
-                i{
-                    height: 4vh;
-                    margin-right: 2vh;
+                .uneCoordonnee {
+                    display: flex;
+                    align-items: center;
+
+                    i {
+                        height: 4vh;
+                        margin-right: 2vh;
+                    }
                 }
             }
+
+            .liensAnnexes {
+                a {
+                    font-size: 1.5em;
+                    text-decoration: none;
+                    color: $texteHeaderFooter;
+                }
+
+                a:hover{
+                    color: $titre;
+                }
+            }
+        }
+
+        .reseauxSociaux {
+            padding-top: 4vh;
+            width: 40%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+
+            i {
+                border: 1px solid white;
+                border-radius: 50px;
+                padding: 0.5em;
+                min-width: 2em;
+                text-align: center;
+            }
+        }
+
+        hr{
+            width: 80%;
+            margin: auto;
         }
     }
 }
