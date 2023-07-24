@@ -10,33 +10,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Styles -->
     @vite(['resources/sass/accueil.scss', 'resources/css/accueil.css'])
-
+    <!-- Script pour le bouton toTop -->
+    @vite(['resources/js/toTop.js'])
 </head>
 
-<body>
-    <!-- Section Header -->
-    <header>
-        <nav>
-            <img src="/vendor/assets/logo.png" alt="Logo Red Dead Redemeption 2">
-            <div id="mesLiens">
-                <ul>
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Histoire</a></li>
-                    <li><a href="#">Détails <i class="fa fa-chevron-down"></i></a>
-                        <ul class="details">
-                            <li><a href="#">Les personnages</a></li>
-                            <li><a href="#">Les gangs</a></li>
-                            <li><a href="#">Les régions</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">Blog</a>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <!-- Fin section Header -->
+<x-header></x-header>
 
+<body>
     <!-- Début section Hero -->
     <section class="hero">
         <div class="video-container">
@@ -70,7 +50,7 @@
             <div class="image-container">
                 <img src="/vendor/assets/histoire.jpg" alt="Photo vers page Histoire">
             </div>
-            <button><a href="#"><b>L'Histoire</b></a></button>
+            <button><a href="/histoire"><b>L'Histoire</b></a></button>
         </div>
 
         <div class="uneRubrique">
@@ -109,45 +89,12 @@
         </div>
     </section>
     <!-- Fin section rubriques -->
+    <!-- Bouton toTop -->
+    @component('components.toTop')
+    @endcomponent
+    <!-- Fin bouton toTop -->
 
-    <!-- Début section footer -->
-    <footer class="footer">
-        <div class="nav">
-            <img src="/vendor/assets/logo.png" alt="Logo Red Dead Redemeption 2">
-            <div class="coordonnees">
-
-                <div class="uneCoordonnee">
-                    <i class="fa fa-map-pin"></i>
-                    <p>85000, La Roche sur Yon</p>
-                </div>
-
-                <div class="uneCoordonnee">
-                    <i class="fa fa-envelope"></i>
-                    <p>cousseaualban@gmail.com</p>
-                </div>
-
-                <div class="uneCoordonnee">
-                    <i class="fa fa-phone"></i>
-                    <p>02 44 23 82 15 </p>
-                </div>
-
-            </div>
-
-            <div class="liensAnnexes">
-                <p><a href="#">Mentions Légales</a></p>
-                <p><a href="#">Politique de confidentialié</a></p>
-                <p><a href="#">Contact</a></p>
-            </div>
-        </div>
-        <hr>
-        <div class="reseauxSociaux">
-            <i class="fa fa-instagram"></i>
-            <i class="fa fa-facebook"></i>
-            <i class="fa fa-linkedin"></i>
-            <i class="fa fa-youtube"></i>
-        </div>
-    </footer>
-    <!-- Fin section footer -->
+    <x-footer></x-footer>
 </body>
 
 </html>

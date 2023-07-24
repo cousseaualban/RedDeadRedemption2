@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('front.accueil');
 });
 
 Auth::routes();
@@ -41,6 +41,11 @@ Route::middleware(['auth'])->group(function(){
 // Obtenir la page d'accueil
 Route::get('/accueil', function(){
     return view('front.accueil');
+});
+
+// Obtenir la page Histoire
+Route::get('/histoire', function(){
+    return view('front.histoire');
 });
 
 

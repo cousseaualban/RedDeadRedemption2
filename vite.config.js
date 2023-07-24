@@ -7,7 +7,9 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/sass/accueil.scss',
+                'resources/sass/histoire.scss',
                 'resources/js/app.js',
+                'resources/js/toTop.js',
             ],
             refresh: true,
         }),

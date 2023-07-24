@@ -1,0 +1,72 @@
+.footer {
+    background-color: $couleurDeFond;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: $texteHeaderFooter;
+
+    .nav {
+        padding-top: 4vh;
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+            width: 25%;
+        }
+
+        .coordonnees {
+            display: flex;
+            flex-direction: column;
+            font-size: 1.5em;
+
+            .uneCoordonnee {
+                display: flex;
+                align-items: center;
+
+                i {
+                    height: 4vh;
+                    margin-right: 2vh;
+                }
+            }
+        }
+
+        .liensAnnexes {
+            a {
+                font-size: 1.5em;
+                text-decoration: none;
+                color: $texteHeaderFooter;
+            }
+
+            a:hover {
+                color: $titre;
+            }
+        }
+    }
+
+    .reseauxSociaux {
+        padding-top: 4vh;
+        padding-bottom: 2vh;
+        width: 40%;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+
+        i {
+            font-size: 1.5em;
+            border: 1px solid white;
+            border-radius: 50px;
+            padding: 0.5em;
+            min-width: 2em;
+            text-align: center;
+        }
+    }
+
+    hr {
+        width: 80%;
+        margin: auto;
+        border-width: 3px;
+    }
+}

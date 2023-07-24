@@ -1,0 +1,28 @@
+@import 'variables';
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 2vh;
+    right: 2vh;
+    display: none;
+    width: 40px;
+    height: 4vh;
+    background-color: #EC2E16;
+    border-radius: 20px;
+    text-align: center;
+    line-height: 4vh;
+    color: #fff;
+
+    img {
+        width: 75%;
+    }
+}
+
+.scroll-to-top:hover {
+    transition-duration: 0.4s;
+    background-color: $couleurDeFond;
+}
+
+.scroll-to-top.show {
+    display: block;
+}

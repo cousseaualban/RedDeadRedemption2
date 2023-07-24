@@ -1,0 +1,55 @@
+header {
+    background-color: $couleurDeFond;
+
+    nav {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        font-size: 1.5em;
+
+        img {
+            width: 25%;
+        }
+
+        #mesLiens {
+            width: 60%;
+            margin: auto;
+
+            ul {
+                display: flex;
+                justify-content: space-between;
+
+                li {
+                    list-style-type: none;
+
+                    a {
+                        text-decoration: none;
+                        color: $texteHeaderFooter;
+
+                    }
+
+                    a:hover {
+                        color: $titre;
+                        transition: 0.4s;
+                    }
+                }
+
+                .details {
+                    width: 100%;
+                    position: absolute;
+                    z-index: 999;
+                    display: none;
+
+                    li {
+                        display: block;
+                    }
+                }
+
+                li:hover .details {
+                    display: block;
+                }
+            }
+
+        }
+    }
+}
