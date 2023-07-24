@@ -46,7 +46,10 @@ header {
                 }
 
                 li:hover .details {
+                    padding-bottom: 2vh;
+                    width: 11%;
                     display: block;
+                    background-color: $couleurDeFond;
                 }
             }
 
