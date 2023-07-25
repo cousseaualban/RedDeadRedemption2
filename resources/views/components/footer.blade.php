@@ -29,10 +29,10 @@
     </div>
     <hr>
     <div class="reseauxSociaux">
-        <i class="fa fa-instagram"></i>
-        <i class="fa fa-facebook"></i>
-        <i class="fa fa-linkedin"></i>
-        <i class="fa fa-youtube"></i>
+        <a href="https://www.instagram.com/reddead_redemption2/?hl=fr"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.facebook.com/reddeadredemption"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.linkedin.com/company/red-or-dead-productions-limited/about/"><i class="fa fa-linkedin"></i></a>
+        <a href="https://www.youtube.com/@RockstarGames"><i class="fa fa-youtube"></i></a>
     </div>
 </footer>
 <!-- Fin section footer -->

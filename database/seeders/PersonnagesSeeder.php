@@ -21,6 +21,7 @@ class PersonnagesSeeder extends Seeder
                 'nom' => 'Morgan',
                 'age' => 36,
                 'biographie' => 'Personnage principal de Red Dead Redemption 2 et bras droit de Dutch Van Der Linde, Arthur Morgan est un hors-la-loi rêvant, comme tous ses « frères d’armes », de liberté et de richesse. Mais les mois passent et Arthur se rend compte que ce n’est pas ça, le plus important.',
+                'type' => 'principal',
                 'gang_id' => 1,
             ]);
         }

@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->integer('age');
             $table->text('biographie');
+            $table->enum('type', ['principal', 'secondaire'])->default('principal');
             $table->integer('gang_id')->unsigned();
             $table->foreign('gang_id')->references('id')->on('gangs');
             $table->timestamps();

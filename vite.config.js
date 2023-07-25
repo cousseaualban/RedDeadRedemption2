@@ -8,6 +8,8 @@ export default defineConfig({
             input: [
                 'resources/sass/accueil.scss',
                 'resources/sass/histoire.scss',
+                'resources/sass/gangs.scss',
+                'resources/sass/personnages.scss',
                 'resources/js/app.js',
                 'resources/js/toTop.js',
             ],

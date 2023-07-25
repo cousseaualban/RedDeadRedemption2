@@ -43,6 +43,11 @@
                 </div>
                 <hr>
                 <div class="form-group d-flex">
+                    <strong class="pr-3">Principal / Secondaire : </strong>
+                    <p>{{$personnage->type}}</p>
+                </div>
+                <hr>
+                <div class="form-group d-flex">
                     <strong class="pr-3">Sa bande : </strong>
                     <p>{{$personnage->gang->nom}}</p>
                 </div>

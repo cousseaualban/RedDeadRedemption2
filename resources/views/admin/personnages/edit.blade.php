@@ -42,6 +42,14 @@
             </div>
 
             <div class="form-group">
+                <label for="type"> Personnage principal / secondaire ? </label>
+                <select name="type" class="form-control">
+                    <option value="principal">principal</option>
+                    <option value="secondaire">secondaire</option>
+                </select>
+            </div>
+
+            <div class="form-group">
                 <label for="gang_id">Sa bande : </label>
                 <select name="gang_id" class="form-control">
                     @foreach($gangs as $gang)

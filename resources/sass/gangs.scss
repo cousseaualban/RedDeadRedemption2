@@ -1,0 +1,77 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables et Composants
+@import 'variables';
+@import 'header';
+@import 'footer';
+@import 'toTop';
+
+// Bootstrap
+@import 'bootstrap/scss/bootstrap';
+
+body {
+
+    p {
+        font-size: 1.25em;
+        text-align: justify;
+    }
+
+    .hero {
+        width: 100%;
+        background-image: url('/public/vendor/assets/heroGangs.jpg');
+        background-size: cover;
+        height: 50vh;
+    }
+
+    h1 {
+        text-align: center;
+        color: $titre;
+        padding-top: 5vh;
+    }
+
+    h2 {
+        text-align: center;
+        color: $titre;
+        padding-bottom: 5vh;
+    }
+
+    .affichage {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .gang-container {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 5vh;
+
+        img {
+            width: 30vw;
+            margin-right: 12vh;
+        }
+
+        .leGang {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    /* Add this new style for even entries */
+    .gang-container.reversed {
+        flex-direction: row-reverse;
+    }
+
+    .gang-container.reversed img {
+        margin-right: 0;
+        margin-left: 12vh;
+    }
+
+
+}

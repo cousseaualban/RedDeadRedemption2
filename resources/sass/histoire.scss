@@ -13,13 +13,18 @@
 body {
     .histoire {
 
-        .hero{
-            width: 70%;
-            background-image: url('/vendor/assets/heroHistoire.jpg');
+        p{
+            font-size: 1.25em;
+        }
+
+        .hero {
+            width: 100%;
+            background-image: url('/public/vendor/assets/heroHistoire.jpg');
             background-size: cover;
             background-position: center;
-            height: 2vh;
+            height: 50vh;
         }
+
 
         h1 {
             padding-top: 5vh;
@@ -37,7 +42,7 @@ body {
 
         .extrait {
             width: 90%;
-            margin: auto    ;
+            margin: auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -45,7 +50,7 @@ body {
             padding-bottom: 5vh;
 
             .image-container {
-                width: 180vw;
+                width: 220vw;
                 height: 20vw;
                 overflow: hidden;
 
@@ -60,7 +65,7 @@ body {
 
         .extrait-inverse {
             width: 90%;
-            margin: auto    ;
+            margin: auto;
             display: flex;
             flex-direction: row-reverse;
             align-items: center;
@@ -68,7 +73,7 @@ body {
             padding-bottom: 5vh;
 
             .image-container {
-                width: 180vw;
+                width: 260vw;
                 height: 20vw;
                 overflow: hidden;
 
@@ -77,6 +82,7 @@ body {
                     height: 100%;
                     object-fit: cover;
                     object-position: center;
+                    margin-left: 20vh;
                 }
             }
         }

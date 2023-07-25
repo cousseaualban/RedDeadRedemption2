@@ -20,7 +20,7 @@
         .coordonnees {
             display: flex;
             flex-direction: column;
-            font-size: 1.5em;
+            font-size: 1.25em;
 
             .uneCoordonnee {
                 display: flex;
@@ -35,7 +35,7 @@
 
         .liensAnnexes {
             a {
-                font-size: 1.5em;
+                font-size: 1.25em;
                 text-decoration: none;
                 color: $texteHeaderFooter;
             }
@@ -53,6 +53,10 @@
         margin: auto;
         display: flex;
         justify-content: space-between;
+
+        a{
+            color: $texteHeaderFooter;
+        }
 
         i {
             font-size: 1.5em;

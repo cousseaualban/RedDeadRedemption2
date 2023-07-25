@@ -106,3 +106,11 @@
         </a>
     </p>
 @stop
+
+<p>Important ! Votre mot de passe doit :</p>
+<ul>
+    <li>Contenir au minimum 8 caractères</li>
+    <li>Avoir au minimum une lettre majuscule et minuscule</li>
+    <li>Avoir au moins un chiffre</li>
+    <li>Contenir un caractère spécial</li>
+</ul>

@@ -18,6 +18,7 @@ class Personnages extends Model
         'image',
         'age',
         'biographie',
+        'type',
         'gang_id',
     ];
 

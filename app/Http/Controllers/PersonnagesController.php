@@ -52,6 +52,7 @@ class PersonnagesController extends Controller
             'nom' => 'required|max:50',
             'age' => 'required|integer',
             'biographie' => 'required|max:500',
+            'type' => 'required|max:100',
             'gang_id' => 'required|integer',
         ]);
 
@@ -116,6 +117,7 @@ class PersonnagesController extends Controller
         $personnage->nom = $request->get('nom');
         $personnage->age = $request->get('age');
         $personnage->biographie = $request->get('biographie');
+        $personnage->type = $request->get('type');
         $personnage->gang_id = $request->get('gang_id');
 
         /* Conditions permettant de remplacer l'image initialement choisie par une nouvelle */
