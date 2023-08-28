@@ -25,12 +25,14 @@ body {
     }
 
     h1 {
+        font-size: 5em;
         text-align: center;
         color: $titre;
         padding-top: 5vh;
     }
 
     h2 {
+        font-size: 4em;
         text-align: center;
         color: $titre;
         padding-bottom: 5vh;
@@ -62,8 +64,6 @@ body {
             flex-direction: column;
         }
     }
-
-    /* Add this new style for even entries */
     .gang-container.reversed {
         flex-direction: row-reverse;
     }

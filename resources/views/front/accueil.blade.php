@@ -26,8 +26,8 @@
         </div>
 
         <div class="titre">
-            <h1>RED DEAD REDEMPTION 2</h1>
-            <h2>Hors-la-loi à vie...</h2>
+            <h1><b>RED DEAD REDEMPTION 2</b></h1>
+            <h2><b>Hors-la-loi à vie...</b></h2>
         </div>
     </section>
     <!-- Fin section hero -->
@@ -57,35 +57,35 @@
             <div class="image-container">
                 <img src="/vendor/assets/personnages.jpg" alt="Photo vers page Histoire">
             </div>
-            <button><a href="#"><b>Les Personnages</b></a></button>
+            <button><a href="/les-personnages"><b>Les Personnages</b></a></button>
         </div>
 
         <div class="uneRubrique">
             <div class="image-container">
                 <img src="/vendor/assets/gang.jpg" alt="Photo vers page Histoire">
             </div>
-            <button><a href="#"><b>Les Gangs</b></a></button>
+            <button><a href="/les-gangs"><b>Les Gangs</b></a></button>
         </div>
 
         <div class="uneRubrique">
             <div class="image-container">
                 <img src="/vendor/assets/regions.jpg" alt="Photo vers page Histoire">
             </div>
-            <button><a href="#"><b>Les Régions</b></a></button>
+            <button><a href="/les-regions"><b>Les Régions</b></a></button>
         </div>
 
         <div class="uneRubrique">
             <div class="image-container">
                 <img src="/vendor/assets/blog.jpg" alt="Photo vers page Histoire">
             </div>
-            <button><a href="#"><b>Notre Blog</b></a></button>
+            <button><a href="/blog"><b>Notre Blog</b></a></button>
         </div>
 
         <div class="uneRubrique">
             <div class="image-container">
                 <img src="/vendor/assets/contact.jpg" alt="Photo vers page Histoire">
             </div>
-            <button><a href="#"><b>Contact</b></a></button>
+            <button><a href="/contact"><b>Contact</b></a></button>
         </div>
     </section>
     <!-- Fin section rubriques -->

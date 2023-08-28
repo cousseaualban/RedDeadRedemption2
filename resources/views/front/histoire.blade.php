@@ -21,8 +21,8 @@
     <section class="histoire">
         <div class="hero">
         </div>
-        <h1>RED DEAD REDEMPTION 2</h1>
-        <h2>L'histoire d'un héros malgré lui</h2>
+        <h1><b>RED DEAD REDEMPTION 2</b></h1>
+        <h2><b>L'histoire d'un héros malgré lui</b></h2>
         <div class="extrait">
             <div class="image-container"> 
                 <img src="/vendor/assets/histoire1.jpg" alt="Photo histoire 1 RDR2">

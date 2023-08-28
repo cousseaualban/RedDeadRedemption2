@@ -46,7 +46,7 @@ class RegionsController extends Controller
         /* Méthode d'envoi des données saisies dans le formulaire de création vers la base de données */
         $envoiBDD = $request->validate([
             'nom'=> 'required|max:50',
-            'description' => 'required|max:500',
+            'description' => 'required|max:2000',
             'ville_id' => 'required|integer',
         ]);
 

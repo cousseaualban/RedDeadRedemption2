@@ -6,11 +6,18 @@ use App\Models\Articles;
 use App\Models\Gangs;
 use App\Models\Personnages;
 use App\Models\Regions;
+use App\Models\Villes;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 
 class Controller extends BaseController
 {
+
+    /* Ce fichier contient des fonctions nécessaires à la 
+       récupération des données dans la base pour la partie 
+       FrontEnd du site (SAUF LA FONCTION getOne) 
+    */
+
     public function getOne()
     {
         $region = Regions::find(1);
@@ -37,9 +44,32 @@ class Controller extends BaseController
         return view('front.personnages', compact('personnagesPrincipaux', 'personnagesSecondaires'));
     }
 
-    public function gangsIndex(Request $request){
+    public function gangsIndex(Request $request)
+    {
         $gangs = Gangs::all();
 
         return view('front.gangs', compact('gangs'));
+    }
+
+    public function oneCharacter($id)
+    {
+        $gangs = Gangs::all();
+        $unPersonnage = Personnages::find($id);
+        return view('front.unPersonnage', compact('unPersonnage', 'gangs'));
+    }
+
+    public function regionsIndex(Request $request)
+    {
+        $villes = Villes::all();
+        $regions = Regions::all();
+
+        return view('front.regions', compact('regions', 'villes'));
+    }
+
+    public function blogIndex(Request $request)
+    {
+        $articles = Articles::all();
+
+        return view('front.blog', compact('articles'));
     }
 }

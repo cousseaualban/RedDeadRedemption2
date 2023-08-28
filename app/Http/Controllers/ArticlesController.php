@@ -23,12 +23,6 @@ class ArticlesController extends Controller
 
     }
 
-    public function one()
-    {
-        $article = Articles::find(1);
-        return view('home', compact('article'));
-    }
-
     /**
      * Show the form for creating a new resource.
      *

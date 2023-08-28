@@ -40,7 +40,7 @@
                     <p>Biographie : {{ substr($personnagePrincipal->biographie, 0, 100) }}[...]</p>
                     <p>Sa bande : {{$personnagePrincipal->gang->nom}}</p>
                     <hr>
-                    <button><a href="">Qui est {{$personnagePrincipal->prenom}} {{$personnagePrincipal->nom}} ? <i class="fa fa-arrow-right"></i></a></button>
+                    <button><a href="{{ route('front.unPersonnage', ['id' => $personnagePrincipal->id]) }}">Qui est {{$personnagePrincipal->prenom}} {{$personnagePrincipal->nom}} ? <i class="fa fa-arrow-right"></i></a></button>
                 </div>
             </div>
             @endforeach
@@ -59,7 +59,7 @@
                     <p>Biographie : {{ substr($personnageSecondaire->biographie, 0, 100) }}[...]</p>
                     <p>Sa bande : {{$personnageSecondaire->gang->nom}}</p>
                     <hr>
-                    <button><a href="">Qui est {{$personnageSecondaire->prenom}} {{$personnageSecondaire->nom}} ? <i class="fa fa-arrow-right"></i></a></button>
+                    <button><a href="{{ route('front.unPersonnage', ['id' => $personnageSecondaire->id]) }}">Qui est {{$personnageSecondaire->prenom}} {{$personnageSecondaire->nom}} ? <i class="fa fa-arrow-right"></i></a></button>
                 </div>
             </div>
             @endforeach

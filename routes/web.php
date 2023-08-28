@@ -48,10 +48,18 @@ Route::get('/histoire', function(){
     return view('front.histoire');
 });
 
-// Obtenir la page Personnages et la fonction charactersIndex dans le contrôleur Controller
+// Obtenir la page Personnages et la fonction charactersIndex dans le fichier Controller
 Route::get('/les-personnages', [Controller::class, 'charactersIndex'])->name('front.personnages');
 
-// Obtenir la page Gangs et la fonction index dans le contrôleur GangsController
+// Obtenir la page Un Personnage pour afficher un seul personnage
+Route::get('/un-personnage/{id}', [Controller::class, 'oneCharacter'])->name('front.unPersonnage');
+
+// Obtenir la page Gangs et la fonction index dans le fichier Controller.php
 Route::get('/les-gangs', [Controller::class, 'gangsIndex'])->name('front.gangs');
 
+// Obtenir la page Régions et la fonction regionsIndex dans le fichier Controller.php
+Route::get('/les-regions', [Controller::class, 'regionsIndex'])->name('front.regions');
+
+// Obtenir la page Blog et la fonction blogIndex dans le fichier Controller
+Route::get('/blog', [Controller::class, 'blogIndex'])->name('front.blog');
 

@@ -13,8 +13,8 @@
                             <li><a href="/les-regions">Les régions</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Blog</a>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="/blog">Blog</a>
+                    <li><a href="/contact">Contact</a></li>
                 </ul>
             </div>
         </nav>

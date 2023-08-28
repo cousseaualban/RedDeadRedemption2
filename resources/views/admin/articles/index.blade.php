@@ -28,7 +28,7 @@
             @foreach($articles as $article)
             <tr>
                 <td>{{$article->id}}</td>
-                <td>{{$article->titre}}</td>
+                <td>{{ substr($article->titre, 0, 30) }}[...]</td>
                 <td style="width: 20%"><img src="{{asset('/storage/images/articles/'.$article->image)}}" style="width: 60%"/></td>
                 <td>{{$article->auteur}}</td>
                 <td>{{ substr($article->contenu, 0, 50) }}[...]</td>
