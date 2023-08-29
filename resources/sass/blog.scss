@@ -37,14 +37,15 @@ body {
 
         .articles {
             padding-top: 4vh;
-            width: 90%;
+            width: 95%;
             margin: auto;
             display: grid;
-            grid-template-columns: 25% 25% 25%;
+            grid-template-columns: repeat(3, 37%);
+            grid-gap: 3vh;
 
             .unArticle {
-                margin-bottom: 2vh;
-                width: 95%;
+                margin-bottom: 3vh;
+                width: 60%;
                 text-align: center;
                 color: $contenu;
                 display: flex;
@@ -70,7 +71,6 @@ body {
 
                 h3 {
                     color: $titre;
-                    padding-bottom: 3vh;
                 }
 
                 button {
@@ -80,6 +80,7 @@ body {
                     width: 40%;
                     height: 6vh;
                     margin: 0 auto;
+                    margin-bottom: 2vh;
 
                     a {
                         font-size: 1.25em;
@@ -96,6 +97,11 @@ body {
                 button:hover {
                     background-color: $titre;
                     transition-duration: 0.6s;
+                }
+
+                p {
+                    font-size: 1.25em;
+                    color: $contenu;
                 }
             }
         }

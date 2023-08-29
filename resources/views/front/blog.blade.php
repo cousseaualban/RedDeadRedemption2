@@ -37,10 +37,11 @@ use Carbon\Carbon;
                 </div>
                 <div class="card-body">
                     <h3 class="card-title">{{$article->titre}}</h3>
-                    <button><a href="">Voir l'article </a><i class="fa fa-arrow-right"></i></button>
                     <hr>
                     <p>Date de l'article : <?= Carbon::createFromFormat('Y-m-d H:i:s', $article->dateArticle)->format('d/m/Y'); ?></p>
                     <p>Auteur : {{$article->auteur}}</p>
+                    <hr>
+                    <button><a href="{{ route('front.unArticle', ['id' => $article->id]) }}">Voir l'article </a><i class="fa fa-arrow-right"></i></button>
                 </div>
             </div>
             @endforeach

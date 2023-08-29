@@ -44,7 +44,7 @@ class ArticlesController extends Controller
     {
         /* Méthode d'envoi des données saisies dans le formulaire de création vers la base de données */
         $envoiBDD = $request->validate([
-            'titre' => 'required|max:100',
+            'titre' => 'required|max:200',
             'auteur' => 'required|max:50',
             'contenu' => 'required|max:5000',
             'dateArticle' => 'required|max:500',

@@ -68,8 +68,14 @@ class Controller extends BaseController
 
     public function blogIndex(Request $request)
     {
-        $articles = Articles::all();
+        $articles = Articles::orderBy('dateArticle', 'desc')->get();
 
         return view('front.blog', compact('articles'));
+    }
+
+    public function oneArticle($id)
+    {
+        $unArticle = Articles::find($id);
+        return view('front.unArticle', compact('unArticle'));
     }
 }

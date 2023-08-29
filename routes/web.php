@@ -5,6 +5,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\GangsController;
 use App\Http\Controllers\PersonnagesController;
 use App\Http\Controllers\RegionsController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -62,4 +63,14 @@ Route::get('/les-regions', [Controller::class, 'regionsIndex'])->name('front.reg
 
 // Obtenir la page Blog et la fonction blogIndex dans le fichier Controller
 Route::get('/blog', [Controller::class, 'blogIndex'])->name('front.blog');
+
+// Obtenir la page unArticle et la fonction oneArticle dans le fichier Controller
+Route::get('/un-article/{id}', [Controller::class, 'oneArticle'])->name('front.unArticle');
+
+// Obtenir la page Contact
+Route::get('/contact', function(){
+    return view('front.contact');
+});
+Route::post('/contact-envoi', [ContactController::class, 'sendEmail'])->name('contact.envoi');
+
 
