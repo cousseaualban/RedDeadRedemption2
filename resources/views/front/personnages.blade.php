@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Découvrez les différents personnages présents dans le jeu Red Dead Redemption 2, qu'ils soient principaux ou secondaires.">
     <title>Les personnages</title>
     <link rel="icon" type="image/png" href="/vendor/assets/rockstar.jpg" sizes="32x32">
     <!-- FontAwesome -->
@@ -12,6 +13,8 @@
     @vite(['resources/sass/personnages.scss', 'resources/css/personnages.css'])
     <!-- Script pour le bouton toTop -->
     @vite(['resources/js/toTop.js'])
+    <!-- Fonts -->
+    <link href="https://fonts.cdnfonts.com/css/univers-condensed-2" rel="stylesheet">
 </head>
 
 <body>

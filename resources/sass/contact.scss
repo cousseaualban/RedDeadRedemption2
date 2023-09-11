@@ -1,6 +1,8 @@
 // Fonts
-@import url('https://fonts.bunny.net/css?family=Nunito');
-
+@font-face {
+    font-family: 'Chinese Rocks';
+    src: url('.././views/font/chinese-rocks/chinese-rocks-free.ttf') format('truetype');
+}
 // Variables et Composants
 @import 'variables';
 @import 'header';
@@ -12,6 +14,7 @@
 
 body {
     margin: 0;
+    font-family: 'Chinese Rocks';
 
     .hero {
         width: 100%;
@@ -25,12 +28,14 @@ body {
         text-align: center;
         color: $titre;
         padding-top: 5vh;
+        font-family: 'Univers Light Condensed', sans-serif;
     }
 
     h2 {
         font-size: 4em;
         text-align: center;
         color: $titre;
+        font-family: 'Univers Light Condensed', sans-serif;
     }
 
     .container {
@@ -42,7 +47,6 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        font-family: 'Archivo', sans-serif;
         font-size: 1.25em;
 
         .form {

@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=" Prénom : <?= $unPersonnage['prenom'] ?>, Nom : <?= $unPersonnage['nom'] ?>, Biographie : <?= substr($unPersonnage->biographie, 0, 50) ?> ">
     <title>{{$unPersonnage->prenom}} {{$unPersonnage->nom}}</title>
     <link rel="icon" type="image/png" href="/vendor/assets/rockstar.jpg" sizes="32x32">
     <!-- FontAwesome -->
@@ -12,6 +13,8 @@
     @vite(['resources/sass/unPersonnage.scss', 'resources/css/unPersonnage.css'])
     <!-- Script pour le bouton toTop -->
     @vite(['resources/js/toTop.js'])
+    <!-- Fonts -->
+    <link href="https://fonts.cdnfonts.com/css/univers-condensed-2" rel="stylesheet">
 </head>
 
 <body>

@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Red Dead Redemption 2, découvrez sur notre site l'histoire de ce jeu, les personnages centraux et secondaires, l'actu de la franchise et bien plus encore...">
     <title>Red Dead Redemption 2</title>
     <link rel="icon" type="image/png" href="/vendor/assets/rockstar.jpg" sizes="32x32">
     <!-- FontAwesome -->
@@ -12,6 +13,9 @@
     @vite(['resources/sass/accueil.scss', 'resources/css/accueil.css'])
     <!-- Script pour le bouton toTop -->
     @vite(['resources/js/toTop.js'])
+    <!-- Fonts -->
+    <link href="https://fonts.cdnfonts.com/css/univers-condensed-2" rel="stylesheet">
+                              
 </head>
 
 <x-header></x-header>
@@ -24,7 +28,6 @@
                 <source src="/vendor/assets/video.mp4" type="video/mp4">
             </video>
         </div>
-
         <div class="titre">
             <h1><b>RED DEAD REDEMPTION 2</b></h1>
             <h2><b>Hors-la-loi à vie...</b></h2>

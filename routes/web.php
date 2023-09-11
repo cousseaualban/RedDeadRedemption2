@@ -73,4 +73,12 @@ Route::get('/contact', function(){
 });
 Route::post('/contact-envoi', [ContactController::class, 'sendEmail'])->name('contact.envoi');
 
+// Obtenir la page politique de confidentialité
+Route::get('/politique-de-confidentitalite', function(){
+    return view('front.politiquedeconfidentialite');
+});
 
+// Obtenir la page mentions légales
+Route::get('/mentions-legales',  function(){
+    return view('front.mentionslegales');
+});

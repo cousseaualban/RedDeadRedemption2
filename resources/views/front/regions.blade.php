@@ -4,6 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Découvrez quelques-unes des villes disséminées dans le vaste territoire de Red Dead Redemption 2.
+            Traversez des environnements variés, des forêts de West Elizabeth aux
+            montagnes d'Ambarino, en passant par les plaines de New Hanover ou les
+            marais de Lemoyne.">
     <title>Les régions</title>
     <link rel="icon" type="image/png" href="/vendor/assets/rockstar.jpg" sizes="32x32">
     <!-- FontAwesome -->
@@ -12,6 +16,9 @@
     @vite(['resources/sass/regions.scss', 'resources/css/regions.css'])
     <!-- Script pour le bouton toTop -->
     @vite(['resources/js/toTop.js'])
+    <!-- Fonts -->
+    <link href="https://fonts.cdnfonts.com/css/univers-condensed-2" rel="stylesheet">
+</head>
 </head>
 
 <body>

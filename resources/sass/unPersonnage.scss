@@ -1,6 +1,8 @@
 // Fonts
-@import url('https://fonts.bunny.net/css?family=Nunito');
-
+@font-face {
+    font-family: 'Chinese Rocks';
+    src: url('.././views/font/chinese-rocks/chinese-rocks-free.ttf') format('truetype');
+}
 // Variables et Composants
 @import 'variables';
 @import 'header';
@@ -11,14 +13,15 @@
 @import 'bootstrap/scss/bootstrap';
 
 body {
+    font-family: 'Chinese Rocks';
 
     h1 {
         padding-top: 5vh;
         color: $titre;
         text-align: center;
         padding-bottom: 5vh;
-        font-family: 'Secular One', sans-serif;
         text-transform: uppercase;
+        font-family: 'Univers Light Condensed', sans-serif;
     }
 
     .lePersonnage {
@@ -52,14 +55,13 @@ body {
             .label {
                 color: $titre;
                 font-size: 1.5em;
-                font-family: 'Secular One', sans-serif;
                 text-transform: uppercase;
+                font-family: 'Univers Light Condensed', sans-serif;
             }
 
             .content {
                 color: $contenu;
                 font-size: 1.25em;
-                font-family: 'Archivo', sans-serif;
             }
 
             button {

@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="N'hésitez pas à nous contacter via notre formulaire afin d'obtenir d'autres informations complétementaires. ">
     <title>Contactez-nous</title>
     <link rel="icon" type="image/png" href="/vendor/assets/rockstar.jpg" sizes="32x32">
     <!-- FontAwesome -->
@@ -12,6 +13,8 @@
     @vite(['resources/sass/contact.scss', 'resources/css/contact.css'])
     <!-- Script pour le bouton toTop -->
     @vite(['resources/js/toTop.js'])
+    <!-- Fonts -->
+    <link href="https://fonts.cdnfonts.com/css/univers-condensed-2" rel="stylesheet">
 </head>
 
 <body>
@@ -93,14 +96,14 @@
     </div>
     <div class="backgroundEntreprise"><iframe title="Carte localisation société Yellow Network" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2737.42618958495!2d-1.4399262232203345!3d46.67758885166657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48042555dcf502a3%3A0xdc43a33df073e0f2!2sARINFO%20La%20Roche-sur-Yon!5e0!3m2!1sfr!2sfr!4v1693313744721!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-    <!-- Bouton toTop -->
-    @component('components.toTop')
-    @endcomponent
-    <!-- Fin bouton toTop -->
+        <!-- Bouton toTop -->
+        @component('components.toTop')
+        @endcomponent
+        <!-- Fin bouton toTop -->
 
-    <!-- Script formulaire de contact -->
-    @vite(['resources/js/contact.js'])
+        <!-- Script formulaire de contact -->
+        @vite(['resources/js/contact.js'])
 
-    <!-- Composant Footer -->
-    <x-footer></x-footer>
+        <!-- Composant Footer -->
+        <x-footer></x-footer>
 </body>

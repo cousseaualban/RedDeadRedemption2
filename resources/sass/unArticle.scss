@@ -1,6 +1,8 @@
 // Fonts
-@import url('https://fonts.bunny.net/css?family=Nunito');
-
+@font-face {
+    font-family: 'Chinese Rocks';
+    src: url('.././views/font/chinese-rocks/chinese-rocks-free.ttf') format('truetype');
+}
 // Variables et Composants
 @import 'variables';
 @import 'header';
@@ -11,6 +13,7 @@
 @import 'bootstrap/scss/bootstrap';
 
 body{
+    font-family: 'Chinese Rocks';
 
     .unArticle{
 
@@ -18,6 +21,7 @@ body{
             padding-top: 5vh;
             text-align: center;
             color: $titre;
+            font-family: 'Univers Light Condensed', sans-serif;
         }
 
         .infoArticle{
@@ -29,6 +33,7 @@ body{
 
             h2{
                 color: $titre;
+                font-family: 'Univers Light Condensed', sans-serif;
             }
         }
 

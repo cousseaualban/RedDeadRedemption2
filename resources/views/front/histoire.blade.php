@@ -4,6 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Amérique, 1899. L'ère de l'Ouest sauvage touche à sa fin.
+                Suite à un braquage qui a mal tourné dans la ville de
+                Blackwater, Arthur Morgan et le reste des hors-la-loi de la
+                bande de Dutch van der Linde doivent prendre la fuite vers
+                l'est. [...]">
     <title>L'Histoire</title>
     <link rel="icon" type="image/png" href="/vendor/assets/rockstar.jpg" sizes="32x32">
     <!-- FontAwesome -->
@@ -12,6 +17,9 @@
     @vite(['resources/sass/histoire.scss', 'resources/css/histoire.css'])
     <!-- Script pour le bouton toTop -->
     @vite(['resources/js/toTop.js'])
+    <!-- Fonts -->
+    <link href="https://fonts.cdnfonts.com/css/univers-condensed-2" rel="stylesheet">
+
 </head>
 
 <body>
@@ -24,7 +32,7 @@
         <h1><b>RED DEAD REDEMPTION 2</b></h1>
         <h2><b>L'histoire d'un héros malgré lui</b></h2>
         <div class="extrait">
-            <div class="image-container"> 
+            <div class="image-container">
                 <img src="/vendor/assets/histoire1.jpg" alt="Photo histoire 1 RDR2">
             </div>
             <p>Amérique, 1899. L'ère de l'Ouest sauvage touche à sa fin.
@@ -41,7 +49,7 @@
         </div>
 
         <div class="extrait-inverse">
-            <div class="image-container"> 
+            <div class="image-container">
                 <img src="/vendor/assets/histoire2.jpg" alt="Photo histoire 2 RDR2">
             </div>
             <p>Le joueur incarne Arthur Morgan, un membre de longue date du gang de

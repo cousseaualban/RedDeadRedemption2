@@ -1,0 +1,36 @@
+// Fonts
+
+@font-face {
+    font-family: 'Chinese Rocks';
+    src: url('.././views/font/chinese-rocks/chinese-rocks-free.ttf') format('truetype');
+}
+
+// Variables et Composants
+@import 'variables';
+@import 'header';
+@import 'footer';
+@import 'toTop';
+
+// Responsive Tablette
+@import './responsive/responsiveHeader';
+
+body {
+    margin: 0;
+    font-family: 'Chinese Rocks', sans-serif; 
+
+    .politiqueDeConfidentialite{
+        h1{
+            text-align: center;
+            font-size: 5em;
+            color: $titre;
+            font-family: 'Univers Light Condensed', sans-serif;
+        }
+
+        .contenu{
+            width: 90%;
+            margin: auto;
+            text-align: justify;
+            color: $contenu;
+        }
+    }
+}

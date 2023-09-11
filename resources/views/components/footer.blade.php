@@ -23,7 +23,7 @@
 
         <div class="liensAnnexes">
             <p><a href="/mentions-legales">Mentions Légales</a></p>
-            <p><a href="/politique-de-confidentialite">Politique de confidentialité</a></p>
+            <p><a href="/politique-de-confidentitalite">Politique de confidentialité</a></p>
             <p><a href="/contact">Contact</a></p>
         </div>
     </div>

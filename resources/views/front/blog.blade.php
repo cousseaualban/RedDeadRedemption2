@@ -9,6 +9,7 @@ use Carbon\Carbon;
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Suivez l'actualité autour de la franchise Red Dead Redemption">
     <title>L'actualité RED DEAD</title>
     <link rel="icon" type="image/png" href="/vendor/assets/rockstar.jpg" sizes="32x32">
     <!-- FontAwesome -->
@@ -17,6 +18,8 @@ use Carbon\Carbon;
     @vite(['resources/sass/blog.scss', 'resources/css/blog.css'])
     <!-- Script pour le bouton toTop -->
     @vite(['resources/js/toTop.js'])
+    <!-- Fonts -->
+    <link href="https://fonts.cdnfonts.com/css/univers-condensed-2" rel="stylesheet">
 </head>
 
 <body>

@@ -1,0 +1,17 @@
+@media(max-width: 992px) {
+    header {
+
+        nav {
+            #mesLiens {
+                width: 80%;
+                margin: auto;
+
+                ul {
+                    li:hover .details {
+                        width: 20%;
+                    }
+                }
+            }
+        }
+    }
+}
