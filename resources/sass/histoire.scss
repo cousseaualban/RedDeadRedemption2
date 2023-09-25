@@ -19,8 +19,13 @@ body {
 
     .histoire {
 
-        p{
+        p {
             font-size: 1.25em;
+
+            // Responsive format tablette
+            @media(max-width: 992px) {
+                font-size: 1.15em;
+            }
         }
 
         .hero {
@@ -29,6 +34,16 @@ body {
             background-size: cover;
             background-position: center;
             height: 50vh;
+
+            // Responsive format tablette
+            @media(max-width: 992px) {
+                height: 35vh;
+            }
+
+            // Responsive format téléphone
+            @media(max-width: 430px) {
+                height: 25vh;
+            }
         }
 
 
@@ -38,6 +53,16 @@ body {
             color: $titre;
             font-size: 5em;
             font-family: 'Univers Light Condensed', sans-serif;
+
+            // Responsive format tablette
+            @media(max-width: 992px) {
+                font-size: 4em;
+            }
+
+            // Responsive format mobile
+            @media(max-width: 768px) {
+                font-size: 3em;
+            }
         }
 
         h2 {
@@ -46,6 +71,16 @@ body {
             padding-bottom: 5vh;
             font-size: 4em;
             font-family: 'Univers Light Condensed', sans-serif;
+
+            // Responsive format tablette
+            @media(max-width: 992px) {
+                font-size: 3em;
+            }
+
+            // Responsive format mobile
+            @media(max-width: 768px) {
+                font-size: 2em;
+            }
         }
 
         .extrait {
@@ -57,16 +92,46 @@ body {
             text-align: justify;
             padding-bottom: 5vh;
 
+            // Responsive format tablette
+            @media(max-width: 992px) {
+                display: flex;
+                flex-direction: column;
+            }
+
+
             .image-container {
-                width: 220vw;
+                width: 200vw;
                 height: 20vw;
                 overflow: hidden;
 
+                // Responsive format tablette
+                @media(max-width: 992px) {
+                    width: 95%;
+                    margin: auto;
+                    height: 40vw;
+                    padding-bottom: 5vh;
+                }
+
+                // Responsive format téléphone
+                @media(max-width: 430px) {
+                    width: 100%;
+                    height: 40vh;
+                }
+
                 img {
-                    width: 90%;
+                    width: 100%;
                     height: 100%;
                     object-fit: cover;
                     object-position: center;
+                }
+            }
+
+            p {
+                padding-left: 3vh;
+
+                // Responsive format téléphone
+                @media(max-width: 430px) {
+                    padding-left: 0vh;
                 }
             }
         }
@@ -80,10 +145,38 @@ body {
             text-align: justify;
             padding-bottom: 5vh;
 
+            // Responsive format tablette
+            @media(max-width: 992px) {
+                width: 86%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            // Responsive format téléphone
+            @media(max-width: 430px) {
+                width: 95%;
+            }
+
             .image-container {
                 width: 260vw;
                 height: 20vw;
                 overflow: hidden;
+
+                // Responsive format tablette
+                @media(max-width: 992px) {
+                    width: 110vw;
+                    height: 40vw;
+                    padding-bottom: 5vh;
+                    padding-right: 30vh;
+                }
+
+                // Responsive format téléphone
+                @media(max-width: 430px) {
+                    padding-right: 35vh;
+                    width: 170vw;
+                    height: 40vh;
+                }
 
                 img {
                     width: 90%;

@@ -30,9 +30,9 @@
             <div class="gang-container @if($index % 2 == 1) reversed @endif">
                 <img src="{{asset('/storage/images/gangs/'.$gang->image)}}" class="card-img-top" alt="Photo du personnage" />
                 <div class="leGang">
-                    <h2>{{$gang->nom}}</h2>
+                    <h2><b>{{$gang->nom}}</b></h2>
                     <p>{{$gang->historique}}</p>
-                    <p><b>Localisation :</b> {{$gang->localisation}}</p>
+                    <p>Localisation : {{$gang->localisation}}</p>
                 </div>
             </div>
             <hr>

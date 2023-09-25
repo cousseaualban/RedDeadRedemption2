@@ -3,6 +3,7 @@
     font-family: 'Chinese Rocks';
     src: url('.././views/font/chinese-rocks/chinese-rocks-free.ttf') format('truetype');
 }
+
 // Variables et Composants
 @import 'variables';
 @import 'header';
@@ -12,32 +13,40 @@
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
 
-body{
+body {
     font-family: 'Chinese Rocks';
 
-    .unArticle{
+    .unArticle {
 
-        h1{
+        h1 {
             padding-top: 5vh;
             text-align: center;
             color: $titre;
             font-family: 'Univers Light Condensed', sans-serif;
         }
 
-        .infoArticle{
+        .infoArticle {
             padding-top: 5vh;
             width: 65%;
             margin: auto;
             display: flex;
             justify-content: space-between;
 
-            h2{
+            h2 {
                 color: $titre;
                 font-family: 'Univers Light Condensed', sans-serif;
             }
+
+                                    // Responsive format téléphone
+                                    @media(max-width: 430px) {
+                                        width: 90%;
+                                        display: flex;
+                                        flex-direction: column;
+                                        align-items: center;
+                                    }
         }
 
-        .contenu{
+        .contenu {
             padding-top: 5vh;
             width: 80%;
             margin: auto;
@@ -45,10 +54,27 @@ body{
             flex-direction: column;
             align-items: center;
 
+            // Responsive format mobile
+            @media(max-width: 768px) {
+                width: 90%;
+            }
+
             .image-container {
                 width: 64vw;
                 height: 35vw;
                 overflow: hidden;
+
+                // Responsive format mobile
+                @media(max-width: 768px) {
+                    width: 70vw;
+                    height: 40vw;
+                }
+
+                                        // Responsive format téléphone
+                                        @media(max-width: 430px) {
+                                            width: 90vw;
+                                            height: 60vw;
+                                        }
             }
 
             .image-container img {
@@ -59,11 +85,16 @@ body{
                 object-position: center;
             }
 
-            p{
+            p {
                 width: 80%;
                 color: $contenu;
                 font-size: 1.25em;
                 text-align: justify;
+
+                // Responsive format mobile
+                @media(max-width: 768px) {
+                    width: 100%;
+                }
             }
         }
     }

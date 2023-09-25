@@ -24,6 +24,16 @@ body {
             color: $titre;
             text-align: center;
             font-family: 'Univers Light Condensed', sans-serif;
+
+            // Responsive format tablette
+            @media(max-width: 992px) {
+                font-size: 4em;
+            }
+
+            // Responsive format mobile
+            @media(max-width: 768px) {
+                font-size: 3em;
+            }
         }
 
         h2 {
@@ -31,6 +41,16 @@ body {
             color: $titre;
             text-align: center;
             font-family: 'Univers Light Condensed', sans-serif;
+
+            // Responsive format tablette
+            @media(max-width: 992px) {
+                font-size: 3em;
+            }
+
+            // Responsive format mobile
+            @media(max-width: 768px) {
+                font-size: 2em;
+            }
         }
 
         h3 {
@@ -45,6 +65,16 @@ body {
             background-image: url('/public/vendor/assets/heroPersonnages.jpg');
             background-size: cover;
             height: 50vh;
+
+            // Responsive format tablette
+            @media(max-width: 992px) {
+                height: 35vh;
+            }
+
+            // Responsive format téléphone
+            @media(max-width: 430px) {
+                height: 25vh;
+            }
         }
 
         .boutonsFiltre {
@@ -54,19 +84,42 @@ body {
             display: flex;
             justify-content: space-between;
 
+            // Responsive format tablette
+            @media(max-width: 992px) {
+                width: 60%;
+            }
+
+            // Responsive format mobile
+            @media(max-width: 768px) {
+                width: 80%;
+            }
+
+            // Responsive format téléphone
+            @media(max-width: 430px) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
             .filtre {
                 width: 35%;
                 background-color: $couleurDeFond;
                 border-radius: 12px;
                 height: 5vh;
                 font-size: 1.25em;
-                
-                a{
+
+                // Responsive format téléphone
+                @media(max-width: 430px) {
+                    margin-bottom: 3vh;
+                    width: 60%;
+                }
+
+                a {
                     color: $texteHeaderFooter;
                     text-decoration: none;
                 }
 
-                a:hover{
+                a:hover {
                     color: $couleurDeFond;
                 }
             }
@@ -85,12 +138,39 @@ body {
             grid-template-columns: 33% 33% 33%;
             padding-bottom: 5vh;
 
+            // Responsive format tablette
+            @media(max-width: 992px) {
+                width: 95%;
+            }
+
+            // Responsive format mobile
+            @media(max-width: 768px) {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
             .card {
                 width: 80%;
                 margin: auto;
                 border-radius: 12px;
                 font-size: 1.25em;
                 margin-bottom: 3vh;
+
+                // Responsive format tablette
+                @media(max-width: 992px) {
+                    width: 85%;
+                }
+
+                // Responsive format mobile
+                @media(max-width: 768px) {
+                    width: 50%;
+                }
+
+                // Responsive format téléphone
+                @media(max-width: 430px) {
+                    width: 70%;
+                }
 
                 h4 {
                     color: $titre;
@@ -99,7 +179,7 @@ body {
 
 
                 .image-container {
-                    width: 23,5vw;
+                    width: 23, 5vw;
                     height: 15vw;
                     overflow: hidden;
 
@@ -107,6 +187,16 @@ body {
                         width: 100%;
                         height: 100%;
                         margin: auto;
+                    }
+
+                    // Responsive format mobile
+                    @media(max-width: 768px) {
+                        height: 25vw;
+                    }
+
+                    // Responsive format téléphone
+                    @media(max-width: 430px) {
+                        height: 35vw;
                     }
                 }
 
@@ -123,12 +213,17 @@ body {
                         height: 6vh;
                         margin: 0 auto;
 
+                        // Responsive format tablette
+                        @media(max-width: 992px) {
+                            width: 90%;
+                        }
+
                         a {
                             text-decoration: none;
                             color: $texteHeaderFooter;
                         }
 
-                        a:hover{
+                        a:hover {
                             color: $couleurDeFond;
                             transition-duration: 0.6s;
                         }

@@ -11,10 +11,6 @@
 @import 'footer';
 @import 'toTop';
 
-// Responsive Tablette
-@import './responsive/responsiveHeader';
-@import './responsive/responsiveAccueil';
-
 
 // Bootstrap
 @import 'bootstrap/scss/bootstrap';
@@ -22,7 +18,7 @@
 body {
     margin: 0;
     font-family: 'Chinese Rocks', sans-serif;
-                                                                                                
+
     .hero {
         .video-container {
             position: relative;
@@ -49,10 +45,30 @@ body {
 
             h1 {
                 font-size: 5em;
+
+                // Responsive format tablette
+                @media(max-width: 992px) {
+                    font-size: 4em;
+                }
+
+                // Responsive format mobile
+                @media(max-width: 768px) {
+                    font-size: 3em;
+                }
             }
 
             h2 {
                 font-size: 4em;
+
+                // Responsive format tablette
+                @media(max-width: 992px) {
+                    font-size: 3em;
+                }
+
+                // Responsive format mobile
+                @media(max-width: 768px) {
+                    font-size: 2em;
+                }
             }
         }
 
@@ -64,6 +80,22 @@ body {
         padding-top: 5vh;
         text-align: center;
         font-size: 1.5em;
+
+        // Responsive format tablette
+        @media(max-width: 992px) {
+            width: 75%;
+        }
+
+        // Responsive format mobile
+        @media(max-width: 768px) {
+            width: 85%;
+        }
+
+        // Responsive format téléphone
+        @media(max-width: 430px) {
+            width: 95%;
+            font-size: 1.25em;
+        }
     }
 
     .rubriques {
@@ -74,6 +106,19 @@ body {
         grid-template-columns: 33% 33% 33%;
         font-size: 1.5em;
 
+        // Responsive format tablette
+        @media(max-width: 992px) {
+            width: 95%;
+            font-size: 1.25em;
+        }
+
+        // Responsive format mobile
+        @media(max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         .uneRubrique {
             width: 35%;
             margin: auto;
@@ -81,10 +126,33 @@ body {
             flex-direction: column;
             align-items: center;
 
+            // Responsive format tablette
+            @media(max-width: 992px) {
+                width: 45%;
+            }
+
             .image-container {
                 width: 20vw;
                 height: 20vw;
                 overflow: hidden;
+
+                // Responsive format tablette
+                @media(max-width: 992px) {
+                    width: 25vw;
+                    height: 25vw;
+                }
+
+                // Responsive format mobile
+                @media(max-width: 768px) {
+                    width: 45vw;
+                    height: 45vw;
+                }
+
+                // Responsive format téléphone
+                @media(max-width: 430px) {
+                    width: 80vw;
+                    height: 80vw;
+                }
             }
 
             .image-container img {
@@ -100,6 +168,16 @@ body {
                 margin-bottom: 5vh;
                 border-radius: 10px;
                 background-color: black;
+
+                // Responsive format mobile
+                @media(max-width: 768px) {
+                    width: 70%;
+                }
+
+                // Responsive format téléphone
+                @media(max-width: 430px) {
+                    width: 80%;
+                }
 
                 a {
                     text-decoration: none;

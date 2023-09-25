@@ -11,22 +11,30 @@
 @import 'footer';
 @import 'toTop';
 
-// Responsive Tablette
-@import './responsive/responsiveHeader';
 
 body {
     margin: 0;
-    font-family: 'Chinese Rocks', sans-serif; 
+    font-family: 'Chinese Rocks', sans-serif;
 
-    .politiqueDeConfidentialite{
-        h1{
+    .politiqueDeConfidentialite {
+        h1 {
             text-align: center;
             font-size: 5em;
             color: $titre;
             font-family: 'Univers Light Condensed', sans-serif;
+
+            // Responsive format tablette
+            @media(max-width: 992px) {
+                font-size: 4em;
+            }
+
+            // Responsive format mobile
+            @media(max-width: 768px) {
+                font-size: 3em;
+            }
         }
 
-        .contenu{
+        .contenu {
             width: 90%;
             margin: auto;
             text-align: justify;

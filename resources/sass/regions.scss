@@ -3,6 +3,7 @@
     font-family: 'Chinese Rocks';
     src: url('.././views/font/chinese-rocks/chinese-rocks-free.ttf') format('truetype');
 }
+
 // Variables et Composants
 @import 'variables';
 @import 'header';
@@ -23,6 +24,16 @@ body {
             background-size: cover;
             background-position: center;
             height: 50vh;
+
+            // Responsive format tablette
+            @media(max-width: 992px) {
+                height: 35vh;
+            }
+
+            // Responsive format téléphone
+            @media(max-width: 430px) {
+                height: 25vh;
+            }
         }
 
         h1 {
@@ -31,6 +42,16 @@ body {
             color: $titre;
             padding-top: 5vh;
             font-family: 'Univers Light Condensed', sans-serif;
+
+            // Responsive format tablette
+            @media(max-width: 992px) {
+                font-size: 4em;
+            }
+
+            // Responsive format mobile
+            @media(max-width: 768px) {
+                font-size: 3em;
+            }
         }
 
         h2 {
@@ -39,6 +60,16 @@ body {
             color: $titre;
             padding-bottom: 5vh;
             font-family: 'Univers Light Condensed', sans-serif;
+
+            // Responsive format tablette
+            @media(max-width: 992px) {
+                font-size: 3em;
+            }
+
+            // Responsive format mobile
+            @media(max-width: 768px) {
+                font-size: 2em;
+            }
         }
 
         p {
@@ -48,6 +79,17 @@ body {
             color: $contenu;
             text-align: center;
             padding-bottom: 4vh;
+
+            // Responsive format tablette
+            @media(max-width: 992px) {
+                font-size: 1.25em;
+                width: 75%;
+            }
+
+            // Responsive format téléphone
+            @media(max-width: 430px) {
+                width: 90%;
+            }
         }
 
         .uneRegion {
@@ -63,6 +105,11 @@ body {
                 overflow: hidden;
                 display: flex;
                 align-items: center;
+
+                // Responsive format téléphone
+                @media(max-width: 430px) {
+                    height: 50vw;
+                }
             }
 
             .image-container::before {
@@ -83,25 +130,75 @@ body {
                 position: absolute;
                 text-align: center;
 
-                .nom{
+                // Responsive format tablette
+                @media(max-width: 992px) {
+                    bottom: 15%;
+                }
+
+                // Responsive format mobile
+                @media(max-width: 768px) {
+                    bottom: 10%;
+                }
+
+                .nom {
                     width: 100%;
                     font-size: 3.5em;
                     color: $titre;
+
+                    // Responsive format tablette
+                    @media(max-width: 992px) {
+                        font-size: 3em;
+                    }
+
+                    // Responsive format mobile
+                    @media(max-width: 768px) {
+                        font-size: 2.5em;
+                    }
+
+                    // Responsive format téléphone
+                    @media(max-width: 430px) {
+                        font-size: 2em;
+                    }
                 }
 
-                .capitale{
+                .capitale {
                     width: 100%;
                     font-size: 3.25em;
                     color: $titre;
+
+                    // Responsive format tablette
+                    @media(max-width: 992px) {
+                        font-size: 2.75em;
+                    }
+
+                    // Responsive format mobile
+                    @media(max-width: 768px) {
+                        font-size: 2.25em;
+                    }
+
+                    // Responsive format téléphone
+                    @media(max-width: 430px) {
+                        font-size: 1.75em;
+                    }
                 }
             }
 
-            .description{
+            .description {
                 padding-top: 4vh;
                 width: 80%;
                 margin: auto;
                 text-align: justify;
                 color: $contenu;
+
+                // Responsive format tablette
+                @media(max-width: 992px) {
+                    width: 90%;
+                }
+
+                // Responsive format téléphone
+                @media(max-width: 430px) {
+                    width: 95%;
+                }
             }
 
         }

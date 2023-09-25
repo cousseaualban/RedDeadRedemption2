@@ -7,6 +7,8 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/sass/accueil.scss',
+                'resources/sass/_header.scss',
+                'resources/sass/_footer.scss',
                 'resources/sass/histoire.scss',
                 'resources/sass/gangs.scss',
                 'resources/sass/personnages.scss',
@@ -17,8 +19,6 @@ export default defineConfig({
                 'resources/sass/contact.scss',
                 'resources/sass/politiquedeconfidentialite.scss',
                 'resources/sass/mentionslegales.scss',
-                'resources/sass/responsive/tablette/_responsiveHeader.scss',
-                'resources/sass/responsive/tablette/responsiveAccueil.scss',
                 'resources/js/app.js',
                 'resources/js/toTop.js',
                 'resources/js/contact.js',

@@ -14,8 +14,27 @@
         justify-content: space-between;
         align-items: center;
 
+        // Responsive format mobile
+        @media(max-width: 768px) {
+            width: 90%;
+        }
+
+        // Responsive format téléphone
+        @media(max-width: 430px) {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
         img {
             width: 25%;
+
+            // Responsive format téléphone
+            @media(max-width: 430px) {
+                padding-bottom: 4vh;
+                width: 50%;
+            }
         }
 
         .coordonnees {
@@ -35,6 +54,12 @@
         }
 
         .liensAnnexes {
+
+            // Responsive format téléphone
+            @media(max-width: 430px) {
+                padding-right: 3vh;
+            }
+
             a {
                 font-size: 1.25em;
                 text-decoration: none;
@@ -55,7 +80,19 @@
         display: flex;
         justify-content: space-between;
 
-        a{
+        // Responsive format mobile
+        @media(max-width: 768px) {
+            width: 60%;
+        }
+
+        // Responsive format téléphone
+        @media(max-width: 430px) {
+            padding-top: 2vh;
+            padding-bottom: 4vh;
+            width: 80%;
+        }
+
+        a {
             color: $texteHeaderFooter;
         }
 
@@ -73,5 +110,10 @@
         width: 80%;
         margin: auto;
         border-width: 3px;
+
+        // Responsive format mobile
+        @media(max-width: 768px) {
+            width: 90%;
+        }
     }
 }

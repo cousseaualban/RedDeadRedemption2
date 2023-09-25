@@ -28,10 +28,10 @@ use Carbon\Carbon;
     <x-header></x-header>
 
     <section class="unArticle">
-        <h1>{{$unArticle->titre}}</h1>
+        <h1><b>{{$unArticle->titre}}</b></h1>
         <div class="infoArticle">
-            <h2>Rédigé le : <?= Carbon::createFromFormat('Y-m-d H:i:s', $unArticle->dateArticle)->locale('fr')->isoFormat('D MMMM YYYY'); ?></h2>
-            <h2>Auteur : {{$unArticle->auteur}}</h2>
+            <h2><b>Rédigé le : <?= Carbon::createFromFormat('Y-m-d H:i:s', $unArticle->dateArticle)->locale('fr')->isoFormat('D MMMM YYYY'); ?></b></h2>
+            <h2><b>Auteur : {{$unArticle->auteur}}</b></h2>
         </div>
         <div class="contenu">
             <div class="image-container">
