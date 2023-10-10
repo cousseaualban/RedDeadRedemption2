@@ -1,67 +1,71 @@
 // Fonts
 
 @font-face {
-    font-family: 'Chinese Rocks';
-    src: url('.././views/font/chinese-rocks/chinese-rocks-free.ttf') format('truetype');
+    font-family: "Chinese Rocks";
+    src: url(".././views/font/chinese-rocks/chinese-rocks-free.ttf")
+        format("truetype");
 }
 
 // Variables et Composants
-@import 'variables';
-@import 'header';
-@import 'footer';
-@import 'toTop';
+@import "variables";
+@import "header";
+@import "footer";
+@import "toTop";
 
 // Bootstrap
-@import 'bootstrap/scss/bootstrap';
+@import "bootstrap/scss/bootstrap";
 
 body {
-    font-family: 'Chinese Rocks';
+    font-family: "Chinese Rocks";
 
     .histoire {
-
         p {
             font-size: 1.25em;
 
             // Responsive format tablette
-            @media(max-width: 992px) {
+            @media (max-width: 992px) {
                 font-size: 1.15em;
             }
         }
 
         .hero {
             width: 100%;
-            background-image: url('/public/vendor/assets/heroHistoire.jpg');
+            background-image: url("/public/vendor/assets/heroHistoire.jpg");
             background-size: cover;
             background-position: center;
             height: 50vh;
 
             // Responsive format tablette
-            @media(max-width: 992px) {
+            @media (max-width: 992px) {
                 height: 35vh;
             }
 
             // Responsive format téléphone
-            @media(max-width: 430px) {
+            @media (max-width: 430px) {
                 height: 25vh;
             }
         }
-
 
         h1 {
             padding-top: 5vh;
             text-align: center;
             color: $titre;
             font-size: 5em;
-            font-family: 'Univers Light Condensed', sans-serif;
+            font-family: "Univers Light Condensed", sans-serif;
 
             // Responsive format tablette
-            @media(max-width: 992px) {
+            @media (max-width: 992px) {
                 font-size: 4em;
             }
 
             // Responsive format mobile
-            @media(max-width: 768px) {
+            @media (max-width: 768px) {
                 font-size: 3em;
+            }
+
+            // Responsive format mobile
+            @media (max-width: 430px) {
+                font-size: 2.5em;
             }
         }
 
@@ -70,16 +74,21 @@ body {
             color: $titre;
             padding-bottom: 5vh;
             font-size: 4em;
-            font-family: 'Univers Light Condensed', sans-serif;
+            font-family: "Univers Light Condensed", sans-serif;
 
             // Responsive format tablette
-            @media(max-width: 992px) {
+            @media (max-width: 992px) {
                 font-size: 3em;
             }
 
             // Responsive format mobile
-            @media(max-width: 768px) {
+            @media (max-width: 768px) {
                 font-size: 2em;
+            }
+
+            // Responsive format mobile
+            @media (max-width: 430px) {
+                font-size: 1.75em;
             }
         }
 
@@ -93,11 +102,10 @@ body {
             padding-bottom: 5vh;
 
             // Responsive format tablette
-            @media(max-width: 992px) {
+            @media (max-width: 992px) {
                 display: flex;
                 flex-direction: column;
             }
-
 
             .image-container {
                 width: 200vw;
@@ -105,7 +113,7 @@ body {
                 overflow: hidden;
 
                 // Responsive format tablette
-                @media(max-width: 992px) {
+                @media (max-width: 992px) {
                     width: 95%;
                     margin: auto;
                     height: 40vw;
@@ -113,7 +121,7 @@ body {
                 }
 
                 // Responsive format téléphone
-                @media(max-width: 430px) {
+                @media (max-width: 430px) {
                     width: 100%;
                     height: 40vh;
                 }
@@ -130,7 +138,7 @@ body {
                 padding-left: 3vh;
 
                 // Responsive format téléphone
-                @media(max-width: 430px) {
+                @media (max-width: 430px) {
                     padding-left: 0vh;
                 }
             }
@@ -146,7 +154,7 @@ body {
             padding-bottom: 5vh;
 
             // Responsive format tablette
-            @media(max-width: 992px) {
+            @media (max-width: 992px) {
                 width: 86%;
                 display: flex;
                 flex-direction: column;
@@ -154,7 +162,7 @@ body {
             }
 
             // Responsive format téléphone
-            @media(max-width: 430px) {
+            @media (max-width: 430px) {
                 width: 95%;
             }
 
@@ -164,7 +172,7 @@ body {
                 overflow: hidden;
 
                 // Responsive format tablette
-                @media(max-width: 992px) {
+                @media (max-width: 992px) {
                     width: 110vw;
                     height: 40vw;
                     padding-bottom: 5vh;
@@ -172,7 +180,7 @@ body {
                 }
 
                 // Responsive format téléphone
-                @media(max-width: 430px) {
+                @media (max-width: 430px) {
                     padding-right: 35vh;
                     width: 170vw;
                     height: 40vh;

@@ -1,36 +1,42 @@
 // Fonts
 
 @font-face {
-    font-family: 'Chinese Rocks';
-    src: url('.././views/font/chinese-rocks/chinese-rocks-free.ttf') format('truetype');
+    font-family: "Chinese Rocks";
+    src: url(".././views/font/chinese-rocks/chinese-rocks-free.ttf")
+        format("truetype");
 }
 
 // Variables et Composants
-@import 'variables';
-@import 'header';
-@import 'footer';
-@import 'toTop';
+@import "variables";
+@import "header";
+@import "footer";
+@import "toTop";
 
 body {
     margin: 0;
-    font-family: 'Chinese Rocks', sans-serif;
+    font-family: "Chinese Rocks", sans-serif;
 
     .mentionsLegales {
         h1 {
             text-align: center;
             font-size: 5em;
             color: $titre;
-            font-family: 'Univers Light Condensed', sans-serif;
+            font-family: "Univers Light Condensed", sans-serif;
 
             // Responsive format tablette
-            @media(max-width: 992px) {
+            @media (max-width: 992px) {
                 font-size: 4em;
             }
 
             // Responsive format mobile
-        @media(max-width: 768px){
-            font-size: 3em;
-        }
+            @media (max-width: 768px) {
+                font-size: 3em;
+            }
+
+            // Responsive format mobile
+            @media (max-width: 430px) {
+                font-size: 2em;
+            }
         }
 
         .contenu {

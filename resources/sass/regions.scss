@@ -1,37 +1,37 @@
 // Fonts
 @font-face {
-    font-family: 'Chinese Rocks';
-    src: url('.././views/font/chinese-rocks/chinese-rocks-free.ttf') format('truetype');
+    font-family: "Chinese Rocks";
+    src: url(".././views/font/chinese-rocks/chinese-rocks-free.ttf")
+        format("truetype");
 }
 
 // Variables et Composants
-@import 'variables';
-@import 'header';
-@import 'footer';
-@import 'toTop';
+@import "variables";
+@import "header";
+@import "footer";
+@import "toTop";
 
 // Bootstrap
-@import 'bootstrap/scss/bootstrap';
+@import "bootstrap/scss/bootstrap";
 
 body {
-    font-family: 'Chinese Rocks';
+    font-family: "Chinese Rocks";
 
     .regions {
-
         .hero {
             width: 100%;
-            background-image: url('/public/vendor/assets/heroRegion.jpg');
+            background-image: url("/public/vendor/assets/heroRegion.jpg");
             background-size: cover;
             background-position: center;
             height: 50vh;
 
             // Responsive format tablette
-            @media(max-width: 992px) {
+            @media (max-width: 992px) {
                 height: 35vh;
             }
 
             // Responsive format téléphone
-            @media(max-width: 430px) {
+            @media (max-width: 430px) {
                 height: 25vh;
             }
         }
@@ -41,16 +41,21 @@ body {
             text-align: center;
             color: $titre;
             padding-top: 5vh;
-            font-family: 'Univers Light Condensed', sans-serif;
+            font-family: "Univers Light Condensed", sans-serif;
 
             // Responsive format tablette
-            @media(max-width: 992px) {
+            @media (max-width: 992px) {
                 font-size: 4em;
             }
 
             // Responsive format mobile
-            @media(max-width: 768px) {
+            @media (max-width: 768px) {
                 font-size: 3em;
+            }
+
+            // Responsive format mobile
+            @media (max-width: 430px) {
+                font-size: 2.5em;
             }
         }
 
@@ -59,16 +64,21 @@ body {
             text-align: center;
             color: $titre;
             padding-bottom: 5vh;
-            font-family: 'Univers Light Condensed', sans-serif;
+            font-family: "Univers Light Condensed", sans-serif;
 
             // Responsive format tablette
-            @media(max-width: 992px) {
+            @media (max-width: 992px) {
                 font-size: 3em;
             }
 
             // Responsive format mobile
-            @media(max-width: 768px) {
+            @media (max-width: 768px) {
                 font-size: 2em;
+            }
+
+            // Responsive format mobile
+            @media (max-width: 430px) {
+                font-size: 1.75em;
             }
         }
 
@@ -81,13 +91,13 @@ body {
             padding-bottom: 4vh;
 
             // Responsive format tablette
-            @media(max-width: 992px) {
+            @media (max-width: 992px) {
                 font-size: 1.25em;
                 width: 75%;
             }
 
             // Responsive format téléphone
-            @media(max-width: 430px) {
+            @media (max-width: 430px) {
                 width: 90%;
             }
         }
@@ -107,7 +117,7 @@ body {
                 align-items: center;
 
                 // Responsive format téléphone
-                @media(max-width: 430px) {
+                @media (max-width: 430px) {
                     height: 50vw;
                 }
             }
@@ -131,13 +141,18 @@ body {
                 text-align: center;
 
                 // Responsive format tablette
-                @media(max-width: 992px) {
+                @media (max-width: 992px) {
                     bottom: 15%;
                 }
 
                 // Responsive format mobile
-                @media(max-width: 768px) {
+                @media (max-width: 768px) {
                     bottom: 10%;
+                }
+
+                // Responsive format téléphone
+                @media (max-width: 430px) {
+                    bottom: 5%;
                 }
 
                 .nom {
@@ -146,18 +161,18 @@ body {
                     color: $titre;
 
                     // Responsive format tablette
-                    @media(max-width: 992px) {
+                    @media (max-width: 992px) {
                         font-size: 3em;
                     }
 
                     // Responsive format mobile
-                    @media(max-width: 768px) {
+                    @media (max-width: 768px) {
                         font-size: 2.5em;
                     }
 
                     // Responsive format téléphone
-                    @media(max-width: 430px) {
-                        font-size: 2em;
+                    @media (max-width: 430px) {
+                        font-size: 1.75em;
                     }
                 }
 
@@ -167,18 +182,18 @@ body {
                     color: $titre;
 
                     // Responsive format tablette
-                    @media(max-width: 992px) {
+                    @media (max-width: 992px) {
                         font-size: 2.75em;
                     }
 
                     // Responsive format mobile
-                    @media(max-width: 768px) {
+                    @media (max-width: 768px) {
                         font-size: 2.25em;
                     }
 
                     // Responsive format téléphone
-                    @media(max-width: 430px) {
-                        font-size: 1.75em;
+                    @media (max-width: 430px) {
+                        font-size: 1.5em;
                     }
                 }
             }
@@ -191,17 +206,15 @@ body {
                 color: $contenu;
 
                 // Responsive format tablette
-                @media(max-width: 992px) {
+                @media (max-width: 992px) {
                     width: 90%;
                 }
 
                 // Responsive format téléphone
-                @media(max-width: 430px) {
+                @media (max-width: 430px) {
                     width: 95%;
                 }
             }
-
         }
     }
-
 }
