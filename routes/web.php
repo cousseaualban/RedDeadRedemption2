@@ -1,11 +1,13 @@
 <?php
 
 use App\Http\Controllers\ArticlesController;
+use App\Http\Controllers\ChangementMDPController;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\GangsController;
 use App\Http\Controllers\PersonnagesController;
 use App\Http\Controllers\RegionsController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +35,8 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('/gangs-admin', GangsController::class);
     Route::resource('/personnages-admin', PersonnagesController::class);
     Route::resource('/regions-admin', RegionsController::class);
+    Route::resource('/changementMDP', ChangementMDPController::class);
+    Route::resource('/profil', UsersController::class);
     Route::get('/home', [Controller::class, 'getOne'])->name('home');
 });
 

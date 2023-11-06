@@ -18,27 +18,42 @@
             <div class="form-group">
                 <label for="prenom"> Prénom du personnage : </label>
                 <input type="text" name="prenom" value="{{ $personnage->prenom }}" class="form-control" placeHolder="prenom">
+                @error('prenom')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="form-group">
                 <label for="nom"> Nom du personnage : </label>
                 <input type="text" name="nom" value="{{ $personnage->nom }}" class="form-control" placeHolder="nom">
+                @error('nom')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="form-group">
                 <label for="image">Photo du personnage</label>
                 <input type="file" class="form-control-file" name="image" />
                 <img src="{{asset('/storage/images/personnages/'.$personnage->image)}}" alt="Photo du personnage" style="width: 60%; padding-top: 3vh; padding-bottom: 3vh" />
+                @error('image')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="form-group">
                 <label for="age"> Age du personnage : </label>
                 <input type="text" name="age" value="{{ $personnage->age }}" class="form-control" placeHolder="age">
+                @error('age')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="form-group">
                 <label for="biographie">Biographie du personnage : </label>
                 <textarea class="form-control" name="biographie" style="height: 20vh;">{{ $personnage->biographie }}</textarea>
+                @error('biographie')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="form-group">
@@ -47,6 +62,9 @@
                     <option value="principal">principal</option>
                     <option value="secondaire">secondaire</option>
                 </select>
+                @error('type')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <div class="form-group">
@@ -56,6 +74,9 @@
                     <option value="{{ $gang->id }}" @if($gang->id == $personnage->gang_id) selected @endif>{{ $gang->nom }}</option>
                     @endforeach
                 </select>
+                @error('gang_id')
+                <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
 
             <button type="submit" class="btn btn-primary">Modifier</button>

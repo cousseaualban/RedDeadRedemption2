@@ -47,14 +47,25 @@ class PersonnagesController extends Controller
     {
         /* Méthode d'envoi des données saisies dans le formulaire de création vers la base de données */
 
-        $envoiBDD = $request->validate([
-            'prenom' => 'required|max:50',
-            'nom' => 'required|max:50',
-            'age' => 'required|integer',
-            'biographie' => 'required|max:500',
-            'type' => 'required|max:100',
-            'gang_id' => 'required|integer',
-        ]);
+        $envoiBDD = $request->validate(
+            [
+                'prenom' => 'required|max:50',
+                'nom' => 'required|max:50',
+                'age' => 'required|integer',
+                'biographie' => 'required|max:500',
+                'type' => 'required|max:100',
+                'gang_id' => 'required|integer',
+            ],
+            [
+                'prenom.required' => 'Le champ Prénom du personnage est obligatoire',
+                'nom.required' => 'Le champ Nom du personnage est obligatoire',
+                'image.required' => 'Le champ Photo du personnage est obligatoire',
+                'age.required' => 'Le champ Age du personnage est obligatoire',
+                'biographie.required' => 'Le champ Biographie du personnage est obligatoire',
+                'type.required' => 'Le champ Personnage principal / secondaire ? est obligatoire',
+                'gang_id.required' => 'Le champ Sa bande est obligatoire',
+            ]
+        );
 
         /* Conditions permettant de stocker mes images dans le dossier public/images/personnages lors de la création d'un personnage */
         if ($request->hasFile('image')) {
@@ -120,6 +131,16 @@ class PersonnagesController extends Controller
         $personnage->type = $request->get('type');
         $personnage->gang_id = $request->get('gang_id');
 
+        [
+            'prenom.required' => 'Le champ Prénom du personnage est obligatoire',
+            'nom.required' => 'Le champ Nom du personnage est obligatoire',
+            'image.required' => 'Le champ Photo du personnage est obligatoire',
+            'age.required' => 'Le champ Age du personnage est obligatoire',
+            'biographie.required' => 'Le champ Biographie du personnage est obligatoire',
+            'type.required' => 'Le champ Personnage principal / secondaire ? est obligatoire',
+            'gang_id.required' => 'Le champ Sa bande est obligatoire',
+        ];
+
         /* Conditions permettant de remplacer l'image initialement choisie par une nouvelle */
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -142,7 +163,7 @@ class PersonnagesController extends Controller
      */
     public function destroy($id)
     {
-        /* Supprime le personnage sélectionné */ 
+        /* Supprime le personnage sélectionné */
         $personnage = Personnages::find($id);
         $personnage->delete();
 

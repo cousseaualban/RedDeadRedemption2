@@ -333,21 +333,11 @@ return [
             'icon_color' => 'cyan',
             'url'        => '/regions-admin',
         ],
-        ['header' => 'Gestion des utilisateurs'],
+        ['header' => 'Gestion du profil'],
         [
-            'text'       => 'Utilisateurs',
+            'text'       => 'Mon profil',
             'icon_color' => 'fas fa-solid fa-user',
-            'url'        => '/utilisateurs-admin',
-        ],
-        [
-            'text'       => 'Permissions',
-            'icon'       => 'far fa-fw fa-address-book',
-            'url'        => '/permissions-admin',
-        ],
-        [
-            'text' => 'Changer le mot de passe',
-            'url'  => '/changePassword-admin',
-            'icon' => 'fas fa-fw fa-lock',
+            'url'        => '/profil/{id}',
         ],
 
     ],

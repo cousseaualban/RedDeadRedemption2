@@ -16,7 +16,7 @@ class RegionsController extends Controller
      */
     public function index()
     {
-        /* Récupérer dans la table régions l'ensemble des données */ 
+        /* Récupérer dans la table régions l'ensemble des données */
         $regions = Regions::all();
         return view('admin.regions.index', compact('regions'));
     }
@@ -44,11 +44,20 @@ class RegionsController extends Controller
     public function store(Request $request)
     {
         /* Méthode d'envoi des données saisies dans le formulaire de création vers la base de données */
-        $envoiBDD = $request->validate([
-            'nom'=> 'required|max:50',
-            'description' => 'required|max:2000',
-            'ville_id' => 'required|integer',
-        ]);
+        $envoiBDD = $request->validate(
+            [
+                'nom' => 'required|max:50',
+                'description' => 'required|max:2000',
+                'ville_id' => 'required|integer',
+            ],
+            [
+                'nom.required' => 'Le champ Nom de la région est obligatoire',
+                'description.required' => 'Le champ Description de la région est obligatoire',
+                'image.required' => 'Le champ Photo de la région est obligatoire',
+                'ville_id.required' => 'Le champ Capitale de la région est obligatoire',
+
+            ]
+        );
 
         /* Conditions permettant de stocker mes images dans le dossier public/images/regions lors de la création de la région */
 
@@ -110,8 +119,16 @@ class RegionsController extends Controller
         $region->description = $request->get('description');
         $region->ville_id = $request->get('ville_id');
 
+        [
+            'nom.required' => 'Le champ Nom de la région est obligatoire',
+            'description.required' => 'Le champ Description de la région est obligatoire',
+            'image.required' => 'Le champ Photo de la région est obligatoire',
+            'ville_id.required' => 'Le champ Capitale de la région est obligatoire',
+
+        ];
+
         /* Conditions permettant de remplacer l'image initialement choisie par une nouvelle */
-        if($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $image = $request->file('image');
             $nom_image = $image->getClientOriginalName();
             $destination = public_path('storage/images/regions');

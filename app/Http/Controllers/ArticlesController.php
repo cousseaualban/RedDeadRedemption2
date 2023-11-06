@@ -20,7 +20,6 @@ class ArticlesController extends Controller
         $articles = Articles::all();
 
         return view('admin.articles.index', compact('articles'));
-
     }
 
     /**
@@ -43,12 +42,22 @@ class ArticlesController extends Controller
     public function store(Request $request)
     {
         /* Méthode d'envoi des données saisies dans le formulaire de création vers la base de données */
-        $envoiBDD = $request->validate([
-            'titre' => 'required|max:200',
-            'auteur' => 'required|max:50',
-            'contenu' => 'required|max:5000',
-            'dateArticle' => 'required|max:500',
-        ]);
+        $envoiBDD = $request->validate(
+            [
+                'titre' => 'required|max:200',
+                'auteur' => 'required|max:50',
+                'contenu' => 'required|max:5000',
+                'dateArticle' => 'required|max:500',
+            ],
+            [
+                'titre.required' => 'Le champ Titre de l\'article est obligatoire',
+                'image.required' => 'Le champ Photo de l\'article est obligatoire',
+                'auteur.required' => 'Le champ Auteur de l\'article est obligatoire',
+                'contenu.required' => 'Le champ Contenu de l\'article est obligatoire',
+                'dateArticle.required' => 'Le champ Date de l\'article est obligatoire',
+
+            ]
+        );
 
         /* Conditions permettant de stocker mes images dans le dossier public/images/articles lors de la création de l'article */
         if ($request->hasFile('image')) {
@@ -109,6 +118,17 @@ class ArticlesController extends Controller
         $article->auteur = $request->get('auteur');
         $article->dateArticle = $request->get('dateArticle');
 
+
+        [
+            'titre.required' => 'Le champ Titre de l\'article est obligatoire',
+            'image.required' => 'Le champ Photo de l\'article est obligatoire',
+            'auteur.required' => 'Le champ Auteur de l\'article est obligatoire',
+            'contenu.required' => 'Le champ Contenu de l\'article est obligatoire',
+            'dateArticle.required' => 'Le champ Date de l\'article est obligatoire',
+
+        ];
+
+
         /* Conditions permettant de remplacer l'image initialement choisie par une nouvelle */
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -134,8 +154,7 @@ class ArticlesController extends Controller
         /* Supprime l'article sélectionné */
         $article = Articles::find($id);
         $article->delete();
-        
+
         return redirect('/articles-admin')->with('success', 'Article supprimé avec succès');
     }
-
 }

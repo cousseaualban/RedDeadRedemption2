@@ -15,7 +15,7 @@ class GangsController extends Controller
      */
     public function index()
     {
-        /* Récupérer dans la table gangs l'ensemble des données */ 
+        /* Récupérer dans la table gangs l'ensemble des données */
         $gangs = Gangs::all();
         return view('admin.gangs.index', compact('gangs'));
     }
@@ -40,11 +40,20 @@ class GangsController extends Controller
     public function store(Request $request)
     {
         /* Méthode d'envoi des données saisies dans le formulaire de création vers la base de données */
-        $envoiBDD = $request->validate([
-            'nom' => 'required|max:50',
-            'historique' => 'required|max:500',
-            'localisation' => 'required|max:100',
-        ]);
+        $envoiBDD = $request->validate(
+            [
+                'nom' => 'required|max:50',
+                'historique' => 'required|max:500',
+                'localisation' => 'required|max:100',
+            ],
+            [
+                'nom.required' => 'Le champ Nom de la bande est obligatoire',
+                'image.required' => 'Le champ Photo de la bande est obligatoire',
+                'historique.required' => 'Le champ Histoire de la bande est obligatoire',
+                'localisation.required' => 'Le champ Localisation de la bande est obligatoire',
+
+            ]
+        );
 
         /* Conditions permettant de stocker mes images dans le dossier public/images/gangs lors de la création d'un gang */
         if ($request->hasFile('image')) {
@@ -54,7 +63,6 @@ class GangsController extends Controller
             $chemin = $request->file('image')->storeAs($chemin_destination, $nom_image);
 
             $envoiBDD['image'] = $nom_image;
-            
         }
         Gangs::create($envoiBDD);
 
@@ -104,6 +112,14 @@ class GangsController extends Controller
         $gang->historique = $request->get('historique');
         $gang->localisation = $request->get('localisation');
 
+        [
+            'nom.required' => 'Le champ Nom de la bande est obligatoire',
+            'image.required' => 'Le champ Photo de la bande est obligatoire',
+            'historique.required' => 'Le champ Histoire de la bande est obligatoire',
+            'localisation.required' => 'Le champ Localisation de la bande est obligatoire',
+
+        ];
+
         /* Conditions permettant de remplacer l'image initialement choisie par une nouvelle */
         if ($request->hasFile('image')) {
             $image = $request->file('image');
@@ -126,7 +142,7 @@ class GangsController extends Controller
      */
     public function destroy($id)
     {
-        /* Supprime le gang sélectionné */ 
+        /* Supprime le gang sélectionné */
         $gang = Gangs::find($id);
         $gang->delete();
 
