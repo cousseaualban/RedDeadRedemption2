@@ -30,7 +30,7 @@ Auth::routes();
 
 // Routes pour le BackOffice
 
-Route::middleware(['auth'])->group(function(){
+Route::middleware(['auth'])->group(function () {
     Route::resource('/articles-admin', ArticlesController::class);
     Route::resource('/gangs-admin', GangsController::class);
     Route::resource('/personnages-admin', PersonnagesController::class);
@@ -44,12 +44,12 @@ Route::middleware(['auth'])->group(function(){
 
 
 // Obtenir la page d'accueil
-Route::get('/accueil', function(){
+Route::get('/accueil', function () {
     return view('front.accueil');
 });
 
 // Obtenir la page Histoire
-Route::get('/histoire', function(){
+Route::get('/histoire', function () {
     return view('front.histoire');
 });
 
@@ -72,17 +72,17 @@ Route::get('/blog', [Controller::class, 'blogIndex'])->name('front.blog');
 Route::get('/un-article/{id}', [Controller::class, 'oneArticle'])->name('front.unArticle');
 
 // Obtenir la page Contact
-Route::get('/contact', function(){
+Route::get('/contact', function () {
     return view('front.contact');
 });
 Route::post('/contact-envoi', [ContactController::class, 'sendEmail'])->name('contact.envoi');
 
 // Obtenir la page politique de confidentialité
-Route::get('/politique-de-confidentitalite', function(){
+Route::get('/politique-de-confidentitalite', function () {
     return view('front.politiquedeconfidentialite');
 });
 
 // Obtenir la page mentions légales
-Route::get('/mentions-legales',  function(){
+Route::get('/mentions-legales',  function () {
     return view('front.mentionslegales');
 });

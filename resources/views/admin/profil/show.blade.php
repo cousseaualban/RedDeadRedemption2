@@ -25,11 +25,6 @@
                 </div>
                 <hr>
                 <div class="form-group d-flex">
-                    <strong class="pr-3 pl-3">Mot de passe : </strong>
-                    <p>{{ str_repeat('*', strlen($user->password)) }}</p>
-                </div>
-                <hr>
-                <div class="form-group d-flex">
                     <strong class="pr-3 pl-3">Compte créé le : </strong>
                     <p>{{ $user->created_at->locale('fr')->isoFormat('DD MMMM YYYY') }}</p>
                 </div>
